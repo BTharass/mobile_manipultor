@@ -6,7 +6,7 @@
   <xacro:include filename="$(find mir_description)/urdf/include/sick_s300.urdf.xacro" />
   <xacro:include filename="$(find mir_description)/urdf/include/wheel.urdf.xacro" />
   <xacro:include filename="$(find mir_description)/urdf/include/caster.urdf.xacro" />
-  <xacro:include filename="$(find realsense2_description)/urdf/_d435i.urdf.xacro"/>
+  <!-- <xacro:include filename="$(find realsense2_description)/urdf/_d435i.urdf.xacro"/> -->
   <xacro:include filename="$(find robotiq_description)/urdf/robotiq_85_gripper.urdf.xacro"/>
 
   <xacro:property name="deg_to_rad" value="0.017453293" />
@@ -257,14 +257,14 @@
     <xacro:property name="initial_positions_file" default="$(arg initial_positions_file)"/>
 
     <!-- create link fixed to the "world" -->
-    <link name="world" />
+    <!-- <link name="world" />
     
     <joint name="world_joint" type="fixed">
       <parent link="${prefix}base_link" />
       <child link="world" />
       <origin xyz="0.135 0 0.79" rpy="0 0 ${0.5 * pi}" />
     </joint>
-    
+     -->
     
     <!-- arm -->
     <xacro:ur_robot
@@ -308,7 +308,7 @@
     </xacro:ur_robot>
 
 
-    <link name="${prefix}camera_mount">
+    <!-- <link name="${prefix}camera_mount">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
@@ -322,17 +322,17 @@
           <mesh filename="package://mir_description/meshes/collision/D435i_mounted.STL" scale="0.001 0.001 0.001" />
         </geometry>
       </collision>
-    </link>    
+    </link>     -->
 
-    <joint name="${prefix}camera_mount_joint" type="fixed">
+    <!-- <joint name="${prefix}camera_mount_joint" type="fixed">
       <parent link="ur_flange" />
       <child link="${prefix}camera_mount" />
       <origin xyz="0.035 0.05 0.03" rpy="0 ${pi} ${0.5 * pi}" />
-    </joint> 
+    </joint>  -->
 
-    <xacro:sensor_d435i parent="ur_flange" name="realsense" use_nominal_extrinsics="true">
+    <!-- <xacro:sensor_d435i parent="ur_flange" name="realsense" use_nominal_extrinsics="true">
       <origin xyz="0.02 0 -0.061" rpy="${pi} 0 0"/>
-    </xacro:sensor_d435i>
+    </xacro:sensor_d435i> -->
 
     <!-- <link name="robotiq_coupler">
       <visual>

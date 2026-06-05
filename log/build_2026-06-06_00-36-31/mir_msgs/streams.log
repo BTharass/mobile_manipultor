@@ -1,0 +1,319 @@
+[0.040s] Invoking command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/mir_robot/mir_msgs -DCMAKE_INSTALL_PREFIX=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs
+[0.433s] -- The C compiler identification is GNU 11.4.0
+[0.433s] -- The CXX compiler identification is GNU 11.4.0
+[0.433s] -- Detecting C compiler ABI info
+[0.433s] -- Detecting C compiler ABI info - done
+[0.433s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.433s] -- Detecting C compile features
+[0.433s] -- Detecting C compile features - done
+[0.433s] -- Detecting CXX compiler ABI info
+[0.433s] -- Detecting CXX compiler ABI info - done
+[0.433s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.433s] -- Detecting CXX compile features
+[0.433s] -- Detecting CXX compile features - done
+[0.433s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.433s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.483s] -- Found builtin_interfaces: 1.2.2 (/opt/ros/humble/share/builtin_interfaces/cmake)
+[0.549s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.562s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.579s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.602s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.633s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.664s] -- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.696s] -- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.015s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.358s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.491s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.511s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.514s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.535s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.535s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.535s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.535s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.552s] -- Found PythonExtra: .so  
+[1.699s] -- Configuring done
+[1.725s] -- Generating done
+[1.733s] -- Build files have been written to: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_msgs
+[1.741s] Invoked command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/mir_robot/mir_msgs -DCMAKE_INSTALL_PREFIX=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs
+[1.742s] Invoking command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --build /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_msgs -- -j16 -l16
+[1.770s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.776s] [  4%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[1.780s] [  6%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.786s] [  6%] Built target ament_cmake_python_copy_mir_msgs
+[2.080s] running egg_info
+[2.080s] creating mir_msgs.egg-info
+[2.080s] writing mir_msgs.egg-info/PKG-INFO
+[2.080s] writing dependency_links to mir_msgs.egg-info/dependency_links.txt
+[2.080s] writing top-level names to mir_msgs.egg-info/top_level.txt
+[2.080s] writing manifest file 'mir_msgs.egg-info/SOURCES.txt'
+[2.082s] reading manifest file 'mir_msgs.egg-info/SOURCES.txt'
+[2.082s] writing manifest file 'mir_msgs.egg-info/SOURCES.txt'
+[2.112s] [  6%] Built target mir_msgs__rs
+[2.114s] [  6%] Built target ament_cmake_python_build_mir_msgs_egg
+[2.196s] [  6%] Built target mir_msgs__cpp
+[2.210s] [  8%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.210s] [ 10%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[2.217s] [ 12%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[2.279s] [ 14%] [32mBuilding C object CMakeFiles/mir_msgs__rosidl_generator_c.dir/rosidl_generator_c/mir_msgs/msg/detail/bms_data__functions.c.o[0m
+[2.280s] [ 18%] [32mBuilding C object CMakeFiles/mir_msgs__rosidl_generator_c.dir/rosidl_generator_c/mir_msgs/srv/detail/exec_mission__functions.c.o[0m
+[2.280s] [ 18%] [32mBuilding C object CMakeFiles/mir_msgs__rosidl_generator_c.dir/rosidl_generator_c/mir_msgs/msg/detail/battery_currents__functions.c.o[0m
+[2.388s] [ 20%] [32m[1mLinking C shared library libmir_msgs__rosidl_generator_c.so[0m
+[2.433s] [ 20%] Built target mir_msgs__rosidl_generator_c
+[2.458s] [ 22%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.458s] [ 25%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[2.458s] [ 27%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[2.661s] [ 29%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mir_msgs/msg/detail/bms_data__type_support.cpp.o[0m
+[2.664s] [ 31%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mir_msgs/srv/detail/exec_mission__type_support.cpp.o[0m
+[2.665s] [ 33%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mir_msgs/msg/detail/battery_currents__type_support.cpp.o[0m
+[2.670s] [ 35%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mir_msgs/msg/battery_currents__type_support.cpp.o[0m
+[2.679s] [ 37%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mir_msgs/srv/exec_mission__type_support.cpp.o[0m
+[2.680s] [ 39%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mir_msgs/msg/bms_data__type_support.cpp.o[0m
+[2.754s] [ 43%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/mir_msgs/msg/detail/dds_fastrtps/battery_currents__type_support.cpp.o[0m
+[2.754s] [ 43%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/mir_msgs/msg/detail/dds_fastrtps/bms_data__type_support.cpp.o[0m
+[2.761s] [ 45%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/mir_msgs/srv/detail/dds_fastrtps/exec_mission__type_support.cpp.o[0m
+[3.072s] [ 47%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/mir_msgs/msg/battery_currents__type_support.cpp.o[0m
+[3.073s] [ 50%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/mir_msgs/srv/exec_mission__type_support.cpp.o[0m
+[3.075s] [ 52%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/mir_msgs/msg/bms_data__type_support.cpp.o[0m
+[3.075s] [ 54%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mir_msgs/msg/detail/battery_currents__type_support_c.cpp.o[0m
+[3.083s] [ 58%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mir_msgs/msg/detail/bms_data__type_support_c.cpp.o[0m
+[3.083s] [ 58%] [32mBuilding CXX object CMakeFiles/mir_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mir_msgs/srv/detail/exec_mission__type_support_c.cpp.o[0m
+[3.103s] [ 60%] [32mBuilding C object CMakeFiles/mir_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mir_msgs/msg/detail/battery_currents__type_support.c.o[0m
+[3.109s] [ 62%] [32mBuilding C object CMakeFiles/mir_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mir_msgs/msg/detail/bms_data__type_support.c.o[0m
+[3.118s] [ 64%] [32mBuilding C object CMakeFiles/mir_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mir_msgs/srv/detail/exec_mission__type_support.c.o[0m
+[3.156s] [ 66%] [32m[1mLinking CXX shared library libmir_msgs__rosidl_typesupport_c.so[0m
+[3.171s] [ 68%] [32m[1mLinking CXX shared library libmir_msgs__rosidl_typesupport_cpp.so[0m
+[3.202s] [ 70%] [32m[1mLinking C shared library libmir_msgs__rosidl_typesupport_introspection_c.so[0m
+[3.234s] [ 70%] Built target mir_msgs__rosidl_typesupport_c
+[3.236s] [ 70%] Built target mir_msgs__rosidl_typesupport_cpp
+[3.260s] [ 70%] Built target mir_msgs__rosidl_typesupport_introspection_c
+[3.288s] [ 72%] [32m[1mLinking CXX shared library libmir_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[3.323s] [ 75%] [32m[1mLinking CXX shared library libmir_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[3.369s] [ 75%] Built target mir_msgs__rosidl_typesupport_introspection_cpp
+[3.398s] [ 75%] Built target mir_msgs__rosidl_typesupport_fastrtps_cpp
+[3.506s] [ 77%] [32m[1mLinking CXX shared library libmir_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[3.557s] [ 77%] Built target mir_msgs__rosidl_typesupport_fastrtps_c
+[3.572s] [ 77%] Built target mir_msgs
+[3.586s] [ 79%] [34m[1mGenerating Python code for ROS interfaces[0m
+[3.960s] [ 79%] Built target mir_msgs__py
+[3.978s] [ 81%] [32mBuilding C object CMakeFiles/mir_msgs__rosidl_generator_py.dir/rosidl_generator_py/mir_msgs/msg/_bms_data_s.c.o[0m
+[3.978s] [ 85%] [32mBuilding C object CMakeFiles/mir_msgs__rosidl_generator_py.dir/rosidl_generator_py/mir_msgs/msg/_battery_currents_s.c.o[0m
+[3.978s] [ 85%] [32mBuilding C object CMakeFiles/mir_msgs__rosidl_generator_py.dir/rosidl_generator_py/mir_msgs/srv/_exec_mission_s.c.o[0m
+[4.047s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/mir_msgs/libmir_msgs__rosidl_generator_py.so[0m
+[4.082s] [ 87%] Built target mir_msgs__rosidl_generator_py
+[4.096s] [ 89%] [32mBuilding C object CMakeFiles/mir_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/mir_msgs/_mir_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[4.099s] [ 91%] [32mBuilding C object CMakeFiles/mir_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/mir_msgs/_mir_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[4.099s] [ 93%] [32mBuilding C object CMakeFiles/mir_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/mir_msgs/_mir_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[4.164s] [ 95%] [32m[1mLinking C shared library rosidl_generator_py/mir_msgs/mir_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.167s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/mir_msgs/mir_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.194s] [100%] [32m[1mLinking C shared library rosidl_generator_py/mir_msgs/mir_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.195s] [100%] Built target mir_msgs__rosidl_typesupport_fastrtps_c__pyext
+[4.196s] [100%] Built target mir_msgs__rosidl_typesupport_introspection_c__pyext
+[4.223s] [100%] Built target mir_msgs__rosidl_typesupport_c__pyext
+[4.232s] Invoked command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --build /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_msgs -- -j16 -l16
+[4.233s] Invoking command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --install /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_msgs
+[4.238s] -- Install configuration: ""
+[4.238s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/ament_index/resource_index/rosidl_interfaces/mir_msgs
+[4.238s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs
+[4.238s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg
+[4.238s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/battery_currents.h
+[4.238s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/bms_data.h
+[4.238s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/rosidl_generator_c__visibility_control.h
+[4.238s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/bms_data__functions.h
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/battery_currents__functions.c
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/battery_currents__functions.h
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/bms_data__functions.c
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/bms_data__type_support.h
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/battery_currents__type_support.h
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/battery_currents__struct.h
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/bms_data__struct.h
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/exec_mission.h
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/exec_mission__functions.c
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/exec_mission__functions.h
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/exec_mission__type_support.h
+[4.239s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/exec_mission__struct.h
+[4.240s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/environment/library_path.sh
+[4.240s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/environment/library_path.dsv
+[4.240s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_generator_c.so
+[4.240s] -- Set runtime path of "/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_generator_c.so" to ""
+[4.240s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs
+[4.240s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg
+[4.240s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[4.240s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail
+[4.240s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/battery_currents__rosidl_typesupport_fastrtps_c.h
+[4.240s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/bms_data__rosidl_typesupport_fastrtps_c.h
+[4.240s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv
+[4.240s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail
+[4.240s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/exec_mission__rosidl_typesupport_fastrtps_c.h
+[4.240s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_typesupport_fastrtps_c.so
+[4.241s] -- Set runtime path of "/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[4.241s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs
+[4.241s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg
+[4.241s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[4.241s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/bms_data.hpp
+[4.241s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/battery_currents.hpp
+[4.241s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail
+[4.241s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/bms_data__traits.hpp
+[4.241s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/bms_data__struct.hpp
+[4.241s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/battery_currents__struct.hpp
+[4.241s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/battery_currents__builder.hpp
+[4.241s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/bms_data__builder.hpp
+[4.241s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/bms_data__type_support.hpp
+[4.241s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/battery_currents__traits.hpp
+[4.241s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/battery_currents__type_support.hpp
+[4.241s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv
+[4.241s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/exec_mission.hpp
+[4.242s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail
+[4.242s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/exec_mission__struct.hpp
+[4.242s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/exec_mission__builder.hpp
+[4.242s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/exec_mission__traits.hpp
+[4.242s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/exec_mission__type_support.hpp
+[4.242s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs
+[4.242s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg
+[4.242s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[4.242s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail
+[4.242s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/bms_data__rosidl_typesupport_fastrtps_cpp.hpp
+[4.242s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/battery_currents__rosidl_typesupport_fastrtps_cpp.hpp
+[4.242s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/dds_fastrtps
+[4.242s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv
+[4.242s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail
+[4.243s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/dds_fastrtps
+[4.243s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/exec_mission__rosidl_typesupport_fastrtps_cpp.hpp
+[4.243s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_typesupport_fastrtps_cpp.so
+[4.243s] -- Set runtime path of "/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[4.243s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs
+[4.243s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg
+[4.243s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[4.243s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail
+[4.243s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/battery_currents__type_support.c
+[4.243s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/battery_currents__rosidl_typesupport_introspection_c.h
+[4.243s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/bms_data__rosidl_typesupport_introspection_c.h
+[4.243s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/bms_data__type_support.c
+[4.244s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv
+[4.244s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail
+[4.244s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/exec_mission__rosidl_typesupport_introspection_c.h
+[4.244s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/exec_mission__type_support.c
+[4.244s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_typesupport_introspection_c.so
+[4.244s] -- Set runtime path of "/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_typesupport_introspection_c.so" to ""
+[4.244s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_typesupport_c.so
+[4.244s] -- Set runtime path of "/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_typesupport_c.so" to ""
+[4.245s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs
+[4.245s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg
+[4.245s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail
+[4.245s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/battery_currents__type_support.cpp
+[4.245s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/bms_data__type_support.cpp
+[4.245s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/bms_data__rosidl_typesupport_introspection_cpp.hpp
+[4.245s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/msg/detail/battery_currents__rosidl_typesupport_introspection_cpp.hpp
+[4.245s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv
+[4.245s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail
+[4.245s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/exec_mission__rosidl_typesupport_introspection_cpp.hpp
+[4.245s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/include/mir_msgs/mir_msgs/srv/detail/exec_mission__type_support.cpp
+[4.245s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_typesupport_introspection_cpp.so
+[4.245s] -- Set runtime path of "/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[4.245s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_typesupport_cpp.so
+[4.246s] -- Set runtime path of "/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_typesupport_cpp.so" to ""
+[4.246s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/environment/pythonpath.sh
+[4.246s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/environment/pythonpath.dsv
+[4.246s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs-1.1.1-py3.10.egg-info
+[4.246s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs-1.1.1-py3.10.egg-info/SOURCES.txt
+[4.246s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs-1.1.1-py3.10.egg-info/dependency_links.txt
+[4.246s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs-1.1.1-py3.10.egg-info/PKG-INFO
+[4.246s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs-1.1.1-py3.10.egg-info/top_level.txt
+[4.246s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs
+[4.246s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/msg
+[4.246s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/msg/__init__.py
+[4.246s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/msg/_bms_data.py
+[4.246s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/msg/_battery_currents.py
+[4.246s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/msg/_bms_data_s.c
+[4.247s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/msg/_battery_currents_s.c
+[4.247s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/libmir_msgs__rosidl_generator_py.so
+[4.247s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/mir_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[4.247s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/_mir_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[4.247s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/_mir_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[4.247s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/__init__.py
+[4.247s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/mir_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[4.247s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/mir_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[4.247s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/_mir_msgs_s.ep.rosidl_typesupport_c.c
+[4.247s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/srv
+[4.247s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/srv/_exec_mission.py
+[4.247s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/srv/__init__.py
+[4.247s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/srv/_exec_mission_s.c
+[4.283s] Listing '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs'...
+[4.283s] Compiling '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/__init__.py'...
+[4.283s] Listing '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/msg'...
+[4.283s] Compiling '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/msg/__init__.py'...
+[4.284s] Compiling '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/msg/_battery_currents.py'...
+[4.284s] Compiling '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/msg/_bms_data.py'...
+[4.284s] Listing '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/srv'...
+[4.284s] Compiling '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/srv/__init__.py'...
+[4.284s] Compiling '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/srv/_exec_mission.py'...
+[4.287s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/mir_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[4.287s] -- Set runtime path of "/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/mir_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[4.287s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/mir_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[4.287s] -- Set runtime path of "/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/mir_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[4.287s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/mir_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[4.287s] -- Set runtime path of "/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/local/lib/python3.10/dist-packages/mir_msgs/mir_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[4.287s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_generator_py.so
+[4.288s] -- Set runtime path of "/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/lib/libmir_msgs__rosidl_generator_py.so" to ""
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/ament_index/resource_index/rust_packages/mir_msgs
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/rust
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/rust/build.rs
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/rust/Cargo.toml
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/rust/src
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/rust/src/srv.rs
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/rust/src/msg
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/rust/src/msg/rmw.rs
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/rust/src/lib.rs
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/rust/src/msg.rs
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/rust/src/srv
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/rust/src/srv/rmw.rs
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/msg/BatteryCurrents.idl
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/msg/BMSData.idl
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/srv/ExecMission.idl
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/msg/BatteryCurrents.msg
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/msg/BMSData.msg
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/srv/ExecMission.srv
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/srv/ExecMission_Request.msg
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/srv/ExecMission_Response.msg
+[4.288s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/ament_index/resource_index/package_run_dependencies/mir_msgs
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/ament_index/resource_index/parent_prefix_path/mir_msgs
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/environment/ament_prefix_path.sh
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/environment/ament_prefix_path.dsv
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/environment/path.sh
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/environment/path.dsv
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/local_setup.bash
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/local_setup.sh
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/local_setup.zsh
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/local_setup.dsv
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/package.dsv
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/ament_index/resource_index/packages/mir_msgs
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/export_mir_msgs__rosidl_generator_cExport.cmake
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/export_mir_msgs__rosidl_generator_cExport-noconfig.cmake
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/export_mir_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/export_mir_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/export_mir_msgs__rosidl_generator_cppExport.cmake
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/export_mir_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[4.289s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/export_mir_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/mir_msgs__rosidl_typesupport_introspection_cExport.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/mir_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/mir_msgs__rosidl_typesupport_cExport.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/mir_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/mir_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/mir_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/mir_msgs__rosidl_typesupport_cppExport.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/mir_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/export_mir_msgs__rosidl_generator_pyExport.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/export_mir_msgs__rosidl_generator_pyExport-noconfig.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/rosidl_cmake-extras.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/mir_msgsConfig.cmake
+[4.290s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/cmake/mir_msgsConfig-version.cmake
+[4.291s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_msgs/share/mir_msgs/package.xml
+[4.292s] Invoked command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --install /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_msgs

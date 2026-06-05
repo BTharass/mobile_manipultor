@@ -142,7 +142,6 @@
 /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ur_description/share/ur_description/urdf/inc/ur_common.xacro
 /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ur_description/share/ur_description/urdf/ur.urdf.xacro
 /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ur_description/share/ur_description/urdf/ur_macro.xacro
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ur_description/share/ur_description/urdf/robot.urdf
 /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ur_description/share/ur_description/test/test_view_ur_launch.py
 /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ur_description/share/ur_description/test/test_ur_urdf_xacro.py
 /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ur_description/share/ament_index/resource_index/package_run_dependencies/ur_description

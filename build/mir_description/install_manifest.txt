@@ -5,7 +5,6 @@
 /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf/include/common_properties.urdf.xacro
 /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf/include/imu.gazebo.urdf.xacro
 /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf/robots/mir.urdf.xacro
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf/robots/robot.sdf
 /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf/robots/robot.urdf
 /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/rviz/mir_visu_full.rviz
 /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/rviz/mir_description.rviz
