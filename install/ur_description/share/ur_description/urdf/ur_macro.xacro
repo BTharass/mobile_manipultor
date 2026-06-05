@@ -161,7 +161,7 @@
           <xacro:get_mesh name="base" type="collision"/>
         </geometry>
       </collision>
-      <xacro:cylinder_inertial radius="${base_inertia_radius}" length="${base_inertia_length}" mass="0.01"> <!--${base_mass} 0.01 -->
+      <xacro:cylinder_inertial radius="${base_inertia_radius}" length="${base_inertia_length}" mass="${base_mass}"> <!--${base_mass} 0.01 -->
         <origin xyz="0 0 0" rpy="0 0 0" />
       </xacro:cylinder_inertial>
     </link>
@@ -178,7 +178,7 @@
           <xacro:get_mesh name="shoulder" type="collision"/>
         </geometry>
       </collision>
-      <xacro:cylinder_inertial radius="${shoulder_inertia_radius}" length="${shoulder_inertia_length}" mass="0.01"> <!-- ${shoulder_mass} 0.01-->
+      <xacro:cylinder_inertial radius="${shoulder_inertia_radius}" length="${shoulder_inertia_length}" mass="${shoulder_mass}"> <!-- ${shoulder_mass} 0.01-->
         <origin xyz="0 0 0" rpy="0 0 0" />
       </xacro:cylinder_inertial>
     </link>
@@ -195,7 +195,7 @@
           <xacro:get_mesh name="upper_arm" type="collision"/>
         </geometry>
       </collision>
-      <xacro:cylinder_inertial radius="${upperarm_inertia_radius}" length="${upperarm_inertia_length}" mass="0.01"> <!-- ${upper_arm_mass}-->
+      <xacro:cylinder_inertial radius="${upperarm_inertia_radius}" length="${upperarm_inertia_length}" mass="${upper_arm_mass}"> <!-- ${upper_arm_mass}-->
         <origin xyz="${-0.5 * upperarm_inertia_length} 0.0 ${upper_arm_inertia_offset}" rpy="0 ${pi/2} 0" />
       </xacro:cylinder_inertial>
     </link>
@@ -212,7 +212,7 @@
           <xacro:get_mesh name="forearm" type="collision"/>
         </geometry>
       </collision>
-      <xacro:cylinder_inertial radius="${forearm_inertia_radius}" length="${forearm_inertia_length}"  mass="0.01"> <!-- ${forearm_mass}-->
+      <xacro:cylinder_inertial radius="${forearm_inertia_radius}" length="${forearm_inertia_length}"  mass="${forearm_mass}"> <!-- ${forearm_mass}-->
         <origin xyz="${-0.5 * forearm_inertia_length} 0.0 ${elbow_offset}" rpy="0 ${pi/2} 0" />
       </xacro:cylinder_inertial>
     </link>
@@ -230,7 +230,7 @@
           <xacro:get_mesh name="wrist_1" type="collision"/>
         </geometry>
       </collision>
-      <xacro:cylinder_inertial radius="${wrist_1_inertia_radius}" length="${wrist_1_inertia_length}"  mass="0.01"> <!-- ${wrist_1_mass}-->
+      <xacro:cylinder_inertial radius="${wrist_1_inertia_radius}" length="${wrist_1_inertia_length}"  mass="${wrist_1_mass}"> <!-- ${wrist_1_mass}-->
         <origin xyz="0 0 0" rpy="0 0 0" />
       </xacro:cylinder_inertial>
     </link>
@@ -248,7 +248,7 @@
           <xacro:get_mesh name="wrist_2" type="collision"/>
         </geometry>
       </collision>
-      <xacro:cylinder_inertial radius="${wrist_2_inertia_radius}" length="${wrist_2_inertia_length}"  mass="0.01"> <!-- ${wrist_2_mass}-->
+      <xacro:cylinder_inertial radius="${wrist_2_inertia_radius}" length="${wrist_2_inertia_length}"  mass="${wrist_2_mass}"> <!-- ${wrist_2_mass}-->
         <origin xyz="0 0 0" rpy="0 0 0" />
       </xacro:cylinder_inertial>
     </link>
@@ -266,7 +266,7 @@
           <xacro:get_mesh name="wrist_3" type="collision"/>
         </geometry>
       </collision>
-      <xacro:cylinder_inertial radius="${wrist_3_inertia_radius}" length="${wrist_3_inertia_length}"  mass="0.01"> <!-- ${wrist_3_mass}-->
+      <xacro:cylinder_inertial radius="${wrist_3_inertia_radius}" length="${wrist_3_inertia_length}"  mass="${wrist_3_mass}"> <!-- ${wrist_3_mass}-->
         <origin xyz="0.0 0.0 ${-0.5 * wrist_3_inertia_length}" rpy="0 0 0" />
       </xacro:cylinder_inertial>
     </link>

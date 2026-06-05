@@ -1,0 +1,72 @@
+[0.417s] Invoking command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/realsense2_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/realsense2_description -DCMAKE_INSTALL_PREFIX=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description
+[0.462s] -- The C compiler identification is GNU 11.4.0
+[0.503s] -- The CXX compiler identification is GNU 11.4.0
+[0.509s] -- Detecting C compiler ABI info
+[0.554s] -- Detecting C compiler ABI info - done
+[0.559s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.559s] -- Detecting C compile features
+[0.559s] -- Detecting C compile features - done
+[0.562s] -- Detecting CXX compiler ABI info
+[0.619s] -- Detecting CXX compiler ABI info - done
+[0.624s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.624s] -- Detecting CXX compile features
+[0.625s] -- Detecting CXX compile features - done
+[0.631s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.794s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.978s] -- Configuring done
+[0.979s] -- Generating done
+[0.980s] -- Build files have been written to: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/realsense2_description
+[0.984s] Invoked command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/realsense2_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/realsense2_description -DCMAKE_INSTALL_PREFIX=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description
+[0.986s] Invoking command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/realsense2_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --build /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/realsense2_description -- -j16 -l16
+[1.012s] Invoked command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/realsense2_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --build /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/realsense2_description -- -j16 -l16
+[1.014s] Invoking command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/realsense2_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --install /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/realsense2_description
+[1.021s] -- Install configuration: ""
+[1.021s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/launch
+[1.021s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/launch/launch_utils.py
+[1.021s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/launch/view_model.launch.py
+[1.021s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/meshes
+[1.021s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/meshes/d405.stl
+[1.022s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/meshes/d415.stl
+[1.065s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/meshes/d455.stl
+[1.071s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/meshes/plug.stl
+[1.072s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/meshes/plug_collision.stl
+[1.073s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/meshes/l515.dae
+[1.148s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/meshes/d435.dae
+[1.171s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/rviz
+[1.171s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/rviz/urdf.rviz
+[1.171s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf
+[1.171s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/test_d405_camera.urdf.xacro
+[1.171s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/_d435i.urdf.xacro
+[1.171s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/_usb_plug.urdf.xacro
+[1.172s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/test_d435_multiple_cameras.urdf.xacro
+[1.172s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/_materials.urdf.xacro
+[1.172s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/_d435i_imu_modules.urdf.xacro
+[1.172s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/_d435.urdf.xacro
+[1.172s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/_r410.urdf.xacro
+[1.173s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/_r430.urdf.xacro
+[1.173s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/test_d415_camera.urdf.xacro
+[1.173s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/test_d455_camera.urdf.xacro
+[1.173s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/test_d435_camera.urdf.xacro
+[1.173s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/test_r410_camera.urdf.xacro
+[1.173s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/_d405.urdf.xacro
+[1.174s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/_d455.urdf.xacro
+[1.174s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/test_r430_camera.urdf.xacro
+[1.174s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/test_d435i_camera.urdf.xacro
+[1.174s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/_d435i_gazebo.xacro
+[1.174s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/urdf/_d415.urdf.xacro
+[1.175s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/ament_index/resource_index/package_run_dependencies/realsense2_description
+[1.175s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/ament_index/resource_index/parent_prefix_path/realsense2_description
+[1.175s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/environment/ament_prefix_path.sh
+[1.175s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/environment/ament_prefix_path.dsv
+[1.175s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/environment/path.sh
+[1.175s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/environment/path.dsv
+[1.175s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/local_setup.bash
+[1.176s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/local_setup.sh
+[1.176s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/local_setup.zsh
+[1.176s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/local_setup.dsv
+[1.176s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/package.dsv
+[1.176s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/ament_index/resource_index/packages/realsense2_description
+[1.176s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/cmake/realsense2_descriptionConfig.cmake
+[1.176s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/cmake/realsense2_descriptionConfig-version.cmake
+[1.176s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/realsense2_description/share/realsense2_description/package.xml
+[1.179s] Invoked command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/realsense2_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --install /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/realsense2_description
