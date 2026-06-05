@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 3.5)
 project(ur_calibration)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
+  add_compile_options(-Wall -Wextra -Wpedantic -Wno-unused-parameter)
 endif()
 
-add_compile_options(-Wno-unused-parameter)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 if(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
   message("${PROJECT_NAME}: You did not request a specific build type: selecting 'RelWithDebInfo'.")
@@ -17,16 +17,14 @@ find_package(rclcpp REQUIRED)
 find_package(ur_robot_driver REQUIRED)
 
 find_package(Eigen3 REQUIRED)
-find_package(yaml-cpp REQUIRED)
+find_package(yaml_cpp_vendor REQUIRED)
 find_package(ur_client_library REQUIRED)
-
-set(YAML_CPP_INCLUDE_DIRS ${YAML_CPP_INCLUDE_DIR})
 
 ###########
 ## Build ##
 ###########
 
-add_library(calibration
+add_library(calibration STATIC
   src/calibration.cpp
   src/calibration_consumer.cpp
 )
@@ -34,10 +32,9 @@ target_include_directories(calibration
   PUBLIC
     include
     ${EIGEN3_INCLUDE_DIRS}
-    ${YAML_CPP_INCLUDE_DIRS}
 )
 target_link_libraries(calibration
-  ${YAML_CPP_LIBRARIES}
+  yaml-cpp
 )
 ament_target_dependencies(calibration
   rclcpp

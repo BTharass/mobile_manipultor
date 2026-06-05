@@ -1,0 +1,53 @@
+[0.049s] Invoking command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --build /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_description -- -j16 -l16
+[0.486s] Invoked command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --build /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_description -- -j16 -l16
+[0.487s] Invoking command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --install /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_description
+[0.506s] -- Install configuration: ""
+[0.506s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf
+[0.506s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf/include
+[0.506s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf/include/wheel.urdf.xacro
+[0.507s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf/include/caster.urdf.xacro
+[0.507s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf/include/sick_s300.urdf.xacro
+[0.507s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf/include/mir_250_v1.urdf.xacro
+[0.507s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf/include/common_properties.urdf.xacro
+[0.507s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf/include/imu.gazebo.urdf.xacro
+[0.507s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf/robots
+[0.508s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/urdf/robots/mir.urdf.xacro
+[0.508s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/rviz
+[0.508s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/rviz/mir_visu_full.rviz
+[0.508s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/rviz/mir_description.rviz
+[0.508s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/rviz/mir_visualization.rviz
+[0.508s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/meshes
+[0.508s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/meshes/collision
+[0.508s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/meshes/collision/D435i_mounted.STL
+[0.509s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/meshes/collision/mir_100_base.stl
+[0.509s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/meshes/collision/caster_wheel_base.stl
+[0.509s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/meshes/collision/mir_250_base.stl
+[0.509s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/meshes/visual
+[0.509s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/meshes/visual/D435i_mounted.STL
+[0.509s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/meshes/visual/mir_100_base.stl
+[0.509s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/meshes/visual/wheel.stl
+[0.509s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/meshes/visual/caster_wheel_base.stl
+[0.509s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/meshes/visual/mir_250_base.stl
+[0.509s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/meshes/visual/sick_lms-100.stl
+[0.509s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/config
+[0.509s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/config/ros2_controllers.yaml
+[0.510s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/launch
+[0.513s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/launch/mir_display_launch.py
+[0.514s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/launch/robot_state_publisher.launch.py
+[0.515s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/launch/mir_launch.py
+[0.515s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/ament_index/resource_index/package_run_dependencies/mir_description
+[0.515s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/ament_index/resource_index/parent_prefix_path/mir_description
+[0.515s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/environment/ament_prefix_path.sh
+[0.515s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/environment/ament_prefix_path.dsv
+[0.515s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/environment/path.sh
+[0.515s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/environment/path.dsv
+[0.515s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/local_setup.bash
+[0.515s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/local_setup.sh
+[0.515s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/local_setup.zsh
+[0.515s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/local_setup.dsv
+[0.515s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/package.dsv
+[0.515s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/ament_index/resource_index/packages/mir_description
+[0.516s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/cmake/mir_descriptionConfig.cmake
+[0.516s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/cmake/mir_descriptionConfig-version.cmake
+[0.516s] -- Up-to-date: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_description/share/mir_description/package.xml
+[0.575s] Invoked command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --install /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_description

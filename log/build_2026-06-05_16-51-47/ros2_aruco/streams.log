@@ -1,0 +1,60 @@
+[0.717s] Invoking command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/ros2_aruco/ros2_aruco': AMENT_PREFIX_PATH=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco_interfaces:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ros2_aruco build --build-base /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build install --record /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/install.log --single-version-externally-managed install_data
+[0.931s] running egg_info
+[0.931s] creating ../../build/ros2_aruco/ros2_aruco.egg-info
+[0.931s] writing ../../build/ros2_aruco/ros2_aruco.egg-info/PKG-INFO
+[0.931s] writing dependency_links to ../../build/ros2_aruco/ros2_aruco.egg-info/dependency_links.txt
+[0.931s] writing entry points to ../../build/ros2_aruco/ros2_aruco.egg-info/entry_points.txt
+[0.931s] writing requirements to ../../build/ros2_aruco/ros2_aruco.egg-info/requires.txt
+[0.931s] writing top-level names to ../../build/ros2_aruco/ros2_aruco.egg-info/top_level.txt
+[0.932s] writing manifest file '../../build/ros2_aruco/ros2_aruco.egg-info/SOURCES.txt'
+[0.933s] reading manifest file '../../build/ros2_aruco/ros2_aruco.egg-info/SOURCES.txt'
+[0.933s] writing manifest file '../../build/ros2_aruco/ros2_aruco.egg-info/SOURCES.txt'
+[0.933s] running build
+[0.933s] running build_py
+[0.934s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build
+[0.934s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib
+[0.934s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco
+[0.934s] copying ros2_aruco/aruco_pose_to_moveit.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco
+[0.934s] copying ros2_aruco/aruco_pose_to_manipulate.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco
+[0.934s] copying ros2_aruco/__init__.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco
+[0.934s] copying ros2_aruco/aruco_pose_to_nav_goal.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco
+[0.934s] copying ros2_aruco/aruco_pose_nav2_goal.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco
+[0.934s] copying ros2_aruco/aruco_node.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco
+[0.934s] copying ros2_aruco/aruco_generate_marker.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco
+[0.934s] running install
+[0.935s] running install_lib
+[0.935s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco
+[0.935s] copying /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco/aruco_pose_to_moveit.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco
+[0.936s] copying /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco/aruco_pose_to_manipulate.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco
+[0.936s] copying /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco/__init__.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco
+[0.936s] copying /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco/aruco_pose_to_nav_goal.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco
+[0.936s] copying /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco/aruco_pose_nav2_goal.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco
+[0.936s] copying /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco/aruco_node.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco
+[0.936s] copying /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build/lib/ros2_aruco/aruco_generate_marker.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco
+[0.936s] byte-compiling /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco/aruco_pose_to_moveit.py to aruco_pose_to_moveit.cpython-310.pyc
+[0.937s] byte-compiling /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco/aruco_pose_to_manipulate.py to aruco_pose_to_manipulate.cpython-310.pyc
+[0.938s] byte-compiling /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco/__init__.py to __init__.cpython-310.pyc
+[0.938s] byte-compiling /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco/aruco_pose_to_nav_goal.py to aruco_pose_to_nav_goal.cpython-310.pyc
+[0.939s] byte-compiling /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco/aruco_pose_nav2_goal.py to aruco_pose_nav2_goal.cpython-310.pyc
+[0.939s] byte-compiling /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco/aruco_node.py to aruco_node.cpython-310.pyc
+[0.940s] byte-compiling /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco/aruco_generate_marker.py to aruco_generate_marker.cpython-310.pyc
+[0.940s] running install_data
+[0.940s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/share/ament_index
+[0.941s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/share/ament_index/resource_index
+[0.941s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/share/ament_index/resource_index/packages
+[0.941s] copying resource/ros2_aruco -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/share/ament_index/resource_index/packages
+[0.941s] copying package.xml -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/share/ros2_aruco
+[0.941s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/share/ros2_aruco/launch
+[0.941s] copying launch/aruco_recognition.launch.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/share/ros2_aruco/launch
+[0.941s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/share/ros2_aruco/config
+[0.941s] copying config/aruco_parameters.yaml -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/share/ros2_aruco/config
+[0.941s] running install_egg_info
+[0.943s] Copying ../../build/ros2_aruco/ros2_aruco.egg-info to /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages/ros2_aruco-0.1.0-py3.10.egg-info
+[0.943s] running install_scripts
+[0.960s] Installing aruco_generate_marker script to /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/ros2_aruco
+[0.960s] Installing aruco_node script to /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/ros2_aruco
+[0.960s] Installing aruco_pose_to_manipulate script to /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/ros2_aruco
+[0.961s] Installing aruco_pose_to_moveit script to /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/ros2_aruco
+[0.961s] Installing aruco_pose_to_nav_goal script to /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/ros2_aruco
+[0.961s] writing list of installed files to '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/install.log'
+[0.981s] Invoked command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/ros2_aruco/ros2_aruco' returned '0': AMENT_PREFIX_PATH=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco_interfaces:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco/lib/python3.10/site-packages:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ros2_aruco build --build-base /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/build install --record /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ros2_aruco/install.log --single-version-externally-managed install_data

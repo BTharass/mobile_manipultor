@@ -9,9 +9,12 @@ option(
   OFF
 )
 
-add_compile_options(-Wall)
-add_compile_options(-Wextra)
-add_compile_options(-Wno-unused-parameter)
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall)
+  add_compile_options(-Wextra)
+  add_compile_options(-Wno-unused-parameter)
+endif()
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 if(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
   message("${PROJECT_NAME}: You did not request a specific build type: selecting 'RelWithDebInfo'.")
@@ -33,6 +36,7 @@ find_package(std_srvs REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(ur_client_library REQUIRED)
 find_package(ur_dashboard_msgs REQUIRED)
+find_package(ur_msgs REQUIRED)
 
 include_directories(include)
 
@@ -49,6 +53,7 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
   tf2_geometry_msgs
   ur_client_library
   ur_dashboard_msgs
+  ur_msgs
 )
 
 add_library(ur_robot_driver_plugin
@@ -56,6 +61,7 @@ add_library(ur_robot_driver_plugin
   src/dashboard_client_ros.cpp
   src/hardware_interface.cpp
   src/urcl_log_handler.cpp
+  src/robot_state_helper.cpp
 )
 target_link_libraries(
   ur_robot_driver_plugin
@@ -81,7 +87,7 @@ add_executable(dashboard_client
   src/dashboard_client_node.cpp
   src/urcl_log_handler.cpp
 )
-target_link_libraries(dashboard_client ${catkin_LIBRARIES} ur_client_library::urcl)
+target_link_libraries(dashboard_client ur_client_library::urcl)
 ament_target_dependencies(dashboard_client ${${PROJECT_NAME}_EXPORTED_TARGETS} ${THIS_PACKAGE_INCLUDE_DEPENDS})
 
 #
@@ -104,13 +110,43 @@ add_executable(controller_stopper_node
 )
 ament_target_dependencies(controller_stopper_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${THIS_PACKAGE_INCLUDE_DEPENDS})
 
+#
+# robot_state_helper
+#
+add_executable(robot_state_helper
+  src/robot_state_helper.cpp
+  src/robot_state_helper_node.cpp
+  src/urcl_log_handler.cpp
+)
+target_link_libraries(robot_state_helper ur_client_library::urcl)
+ament_target_dependencies(robot_state_helper ${${PROJECT_NAME}_EXPORTED_TARGETS} ${THIS_PACKAGE_INCLUDE_DEPENDS})
+
 add_executable(urscript_interface
   src/urscript_interface.cpp
 )
 ament_target_dependencies(urscript_interface ${${PROJECT_NAME}_EXPORTED_TARGETS} ${THIS_PACKAGE_INCLUDE_DEPENDS})
 
+#
+# trajectory_until_node
+#
+add_executable(trajectory_until_node
+  src/trajectory_until_node.cpp
+)
+target_link_libraries(trajectory_until_node PUBLIC
+  rclcpp::rclcpp
+  ${std_msgs_TARGETS}
+  rclcpp_action::rclcpp_action
+  ${ur_msgs_TARGETS}
+)
+
 install(
-  TARGETS dashboard_client ur_ros2_control_node controller_stopper_node urscript_interface
+  TARGETS
+    controller_stopper_node
+    dashboard_client
+    robot_state_helper
+    trajectory_until_node
+    ur_ros2_control_node
+    urscript_interface
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -156,6 +192,11 @@ ament_python_install_package(${PROJECT_NAME})
 # Install Python executables
 install(PROGRAMS
   scripts/tool_communication.py
+  scripts/example_move.py
+  scripts/start_ursim.sh
+  examples/examples.py
+  examples/force_mode.py
+  examples/move_until_example.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -179,18 +220,63 @@ if(BUILD_TESTING)
   find_package(ur_msgs REQUIRED)
   find_package(launch_testing_ament_cmake)
 
+  add_launch_test(test/test_mock_hardware.py
+    TIMEOUT
+      800
+  )
+
   if(${UR_ROBOT_DRIVER_BUILD_INTEGRATION_TESTS})
+    add_launch_test(test/launch_args.py
+      TIMEOUT
+        180
+    )
+    add_launch_test(test/integration_test_component_lifecycle.py
+      TIMEOUT
+        180
+    )
     add_launch_test(test/dashboard_client.py
       TIMEOUT
         180
     )
-    add_launch_test(test/robot_driver.py
+    add_launch_test(test/integration_test_scaled_joint_controller.py
+      TIMEOUT
+        800
+    )
+    add_launch_test(test/integration_test_controller_switch.py
+      TIMEOUT
+        800
+    )
+    add_launch_test(test/integration_test_force_mode.py
+      TIMEOUT
+        800
+    )
+    add_launch_test(test/integration_test_friction_model.py
       TIMEOUT
         800
     )
     add_launch_test(test/urscript_interface.py
       TIMEOUT
         500
+    )
+    add_launch_test(test/integration_test_config_controller.py
+      TIMEOUT
+        800
+    )
+    add_launch_test(test/integration_test_passthrough_controller.py
+      TIMEOUT
+        800
+    )
+    add_launch_test(test/integration_test_io_controller.py
+      TIMEOUT
+        800
+    )
+    add_launch_test(test/integration_test_tool_contact.py
+      TIMEOUT
+        800
+    )
+    add_launch_test(test/integration_test_trajectory_until.py
+      TIMEOUT
+        800
     )
   endif()
 endif()

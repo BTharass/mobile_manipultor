@@ -1,0 +1,16 @@
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/mir_bringup/launch/load_ros2_controllers.launch.py
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/ament_index/resource_index/package_run_dependencies/mir_bringup
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/ament_index/resource_index/parent_prefix_path/mir_bringup
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/mir_bringup/environment/ament_prefix_path.sh
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/mir_bringup/environment/ament_prefix_path.dsv
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/mir_bringup/environment/path.sh
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/mir_bringup/environment/path.dsv
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/mir_bringup/local_setup.bash
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/mir_bringup/local_setup.sh
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/mir_bringup/local_setup.zsh
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/mir_bringup/local_setup.dsv
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/mir_bringup/package.dsv
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/ament_index/resource_index/packages/mir_bringup
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/mir_bringup/cmake/mir_bringupConfig.cmake
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/mir_bringup/cmake/mir_bringupConfig-version.cmake
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_bringup/share/mir_bringup/package.xml

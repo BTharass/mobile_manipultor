@@ -37,6 +37,7 @@
 
 #include "ur_controllers/gpio_controller.hpp"
 
+#include <cmath>
 #include <string>
 
 namespace ur_controllers
@@ -96,6 +97,8 @@ controller_interface::InterfaceConfiguration GPIOController::command_interface_c
   // hand back control --> make UR-program return
   config.names.emplace_back(tf_prefix + "hand_back_control/hand_back_control_cmd");
   config.names.emplace_back(tf_prefix + "hand_back_control/hand_back_control_async_success");
+
+  config.names.emplace_back(tf_prefix + "gpio/analog_output_domain_cmd");
 
   return config;
 }
@@ -157,6 +160,11 @@ controller_interface::InterfaceConfiguration ur_controllers::GPIOController::sta
 
   // program running
   config.names.emplace_back(tf_prefix + "gpio/program_running");
+
+  config.names.emplace_back(tf_prefix + "payload/mass");
+  config.names.emplace_back(tf_prefix + "payload/cog.x");
+  config.names.emplace_back(tf_prefix + "payload/cog.y");
+  config.names.emplace_back(tf_prefix + "payload/cog.z");
 
   return config;
 }
@@ -278,25 +286,25 @@ ur_controllers::GPIOController::on_activate(const rclcpp_lifecycle::State& /*pre
   }
 
   try {
+    auto qos_latched = rclcpp::SystemDefaultsQoS();
+    qos_latched.transient_local();
+    qos_latched.reliable();
     // register publisher
     io_pub_ = get_node()->create_publisher<ur_msgs::msg::IOStates>("~/io_states", rclcpp::SystemDefaultsQoS());
 
     tool_data_pub_ =
         get_node()->create_publisher<ur_msgs::msg::ToolDataMsg>("~/tool_data", rclcpp::SystemDefaultsQoS());
 
-    robot_mode_pub_ =
-        get_node()->create_publisher<ur_dashboard_msgs::msg::RobotMode>("~/robot_mode", rclcpp::SystemDefaultsQoS());
+    robot_mode_pub_ = get_node()->create_publisher<ur_dashboard_msgs::msg::RobotMode>("~/robot_mode", qos_latched);
 
-    safety_mode_pub_ =
-        get_node()->create_publisher<ur_dashboard_msgs::msg::SafetyMode>("~/safety_mode", rclcpp::SystemDefaultsQoS());
+    safety_mode_pub_ = get_node()->create_publisher<ur_dashboard_msgs::msg::SafetyMode>("~/safety_mode", qos_latched);
 
-    auto program_state_pub_qos = rclcpp::SystemDefaultsQoS();
-    program_state_pub_qos.transient_local();
-    program_state_pub_ =
-        get_node()->create_publisher<std_msgs::msg::Bool>("~/robot_program_running", program_state_pub_qos);
-
+    program_state_pub_ = get_node()->create_publisher<std_msgs::msg::Bool>("~/robot_program_running", qos_latched);
     set_io_srv_ = get_node()->create_service<ur_msgs::srv::SetIO>(
         "~/set_io", std::bind(&GPIOController::setIO, this, std::placeholders::_1, std::placeholders::_2));
+    set_analog_output_srv_ = get_node()->create_service<ur_msgs::srv::SetAnalogOutput>(
+        "~/set_analog_output",
+        std::bind(&GPIOController::setAnalogOutput, this, std::placeholders::_1, std::placeholders::_2));
 
     set_speed_slider_srv_ = get_node()->create_service<ur_msgs::srv::SetSpeedSliderFraction>(
         "~/set_speed_slider",
@@ -361,7 +369,7 @@ bool GPIOController::setIO(ur_msgs::srv::SetIO::Request::SharedPtr req, ur_msgs:
     command_interfaces_[CommandInterfaces::IO_ASYNC_SUCCESS].set_value(ASYNC_WAITING);
     command_interfaces_[CommandInterfaces::ANALOG_OUTPUTS_CMD + req->pin].set_value(static_cast<double>(req->state));
 
-    RCLCPP_INFO(get_node()->get_logger(), "Setting analog output '%d' to state: '%1.0f'.", req->pin, req->state);
+    RCLCPP_INFO(get_node()->get_logger(), "Setting analog output '%d' to state: '%f'.", req->pin, req->state);
 
     if (!waitForAsyncCommand([&]() { return command_interfaces_[CommandInterfaces::IO_ASYNC_SUCCESS].get_value(); })) {
       RCLCPP_WARN(get_node()->get_logger(), "Could not verify that io was set. (This might happen when using the "
@@ -387,6 +395,46 @@ bool GPIOController::setIO(ur_msgs::srv::SetIO::Request::SharedPtr req, ur_msgs:
     resp->success = false;
     return false;
   }
+}
+
+bool GPIOController::setAnalogOutput(ur_msgs::srv::SetAnalogOutput::Request::SharedPtr req,
+                                     ur_msgs::srv::SetAnalogOutput::Response::SharedPtr resp)
+{
+  std::string domain_string = "UNKNOWN";
+  switch (req->data.domain) {
+    case ur_msgs::msg::Analog::CURRENT:
+      domain_string = "CURRENT";
+      break;
+    case ur_msgs::msg::Analog::VOLTAGE:
+      domain_string = "VOLTAGE";
+      break;
+    default:
+      RCLCPP_ERROR(get_node()->get_logger(), "Domain must be either 0 (CURRENT) or 1 (VOLTAGE)");
+      resp->success = false;
+      return false;
+  }
+
+  if (!(req->data.pin == 0 || req->data.pin == 1)) {
+    RCLCPP_ERROR(get_node()->get_logger(), "Invalid pin selected. Only pins 0 and 1 are allowed.");
+    resp->success = false;
+    return false;
+  }
+
+  command_interfaces_[CommandInterfaces::IO_ASYNC_SUCCESS].set_value(ASYNC_WAITING);
+  command_interfaces_[CommandInterfaces::ANALOG_OUTPUTS_CMD + req->data.pin].set_value(
+      static_cast<float>(req->data.state));
+  command_interfaces_[CommandInterfaces::ANALOG_OUTPUTS_DOMAIN].set_value(static_cast<double>(req->data.domain));
+
+  RCLCPP_INFO(get_node()->get_logger(), "Setting analog output '%d' to state: '%f' in domain %s.", req->data.pin,
+              req->data.state, domain_string.c_str());
+
+  if (!waitForAsyncCommand([&]() { return command_interfaces_[CommandInterfaces::IO_ASYNC_SUCCESS].get_value(); })) {
+    RCLCPP_WARN(get_node()->get_logger(), "Could not verify that io was set. (This might happen when using the "
+                                          "mocked interface)");
+  }
+
+  resp->success = static_cast<bool>(command_interfaces_[IO_ASYNC_SUCCESS].get_value());
+  return resp->success;
 }
 
 bool GPIOController::setSpeedSlider(ur_msgs::srv::SetSpeedSliderFraction::Request::SharedPtr req,
@@ -488,13 +536,25 @@ bool GPIOController::setPayload(const ur_msgs::srv::SetPayload::Request::SharedP
 
   resp->success = static_cast<bool>(command_interfaces_[CommandInterfaces::PAYLOAD_ASYNC_SUCCESS].get_value());
 
-  if (resp->success) {
-    RCLCPP_INFO(get_node()->get_logger(), "Payload has been set successfully");
-  } else {
+  if (!resp->success) {
     RCLCPP_ERROR(get_node()->get_logger(), "Could not set the payload");
     return false;
   }
 
+  if (params_.verify_payload_on_set) {
+    if (!waitForPayloadRtdeMatch(static_cast<double>(req->mass), req->center_of_gravity.x, req->center_of_gravity.y,
+                                 req->center_of_gravity.z)) {
+      RCLCPP_WARN(get_node()->get_logger(), "setPayload reported success but RTDE payload / payload_cog do not match "
+                                            "the "
+                                            "request yet. (This might "
+                                            "happen when using the mocked interface.)");
+      resp->success = false;
+      RCLCPP_ERROR(get_node()->get_logger(), "Payload RTDE verification failed");
+      return false;
+    }
+
+    RCLCPP_INFO(get_node()->get_logger(), "Payload has been set and verified against RTDE feedback");
+  }
   return true;
 }
 
@@ -544,6 +604,26 @@ bool GPIOController::waitForAsyncCommand(std::function<double(void)> get_value)
       return false;
   }
   return true;
+}
+
+bool GPIOController::waitForPayloadRtdeMatch(double mass, double cx, double cy, double cz)
+{
+  constexpr double tol_mass = 1e-3;
+  constexpr double tol_cog = 1e-4;
+  const auto maximum_retries = params_.check_io_successfull_retries;
+
+  for (int retries = 0; retries <= maximum_retries; ++retries) {
+    const auto m = state_interfaces_[StateInterfaces::PAYLOAD_STATE_MASS].get_value();
+    const auto sx = state_interfaces_[StateInterfaces::PAYLOAD_STATE_COG_X].get_value();
+    const auto sy = state_interfaces_[StateInterfaces::PAYLOAD_STATE_COG_Y].get_value();
+    const auto sz = state_interfaces_[StateInterfaces::PAYLOAD_STATE_COG_Z].get_value();
+    if (std::abs(m - mass) <= tol_mass && std::abs(sx - cx) <= tol_cog && std::abs(sy - cy) <= tol_cog &&
+        std::abs(sz - cz) <= tol_cog) {
+      return true;
+    }
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+  }
+  return false;
 }
 
 }  // namespace ur_controllers

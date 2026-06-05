@@ -2,6 +2,87 @@
 Changelog for package ur_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.13.1 (2026-05-15)
+-------------------
+
+2.13.0 (2026-04-09)
+-------------------
+
+2.12.0 (2026-01-13)
+-------------------
+
+2.11.0 (2025-12-01)
+-------------------
+
+2.10.0 (2025-10-23)
+-------------------
+* Add support for UR18 (backport `#1524 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1524>`_) (`#1525 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1525>`_)
+* Contributors: mergify[bot]
+
+2.9.0 (2025-09-16)
+------------------
+* Add support for UR8 Long (`#1491 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1491>`_)
+* ur_moveit_config: Assure the description is loaded as string (`#1452 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1452>`_)
+* Contributors: Felix Exner
+
+2.8.1 (2025-06-11)
+------------------
+
+2.8.0 (2025-05-20)
+------------------
+* Add support for launching a UR15 robot (`#1359 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1359>`_)
+* Contributors: Felix Exner
+
+2.7.0 (2025-04-10)
+------------------
+* Add support for UR7e and UR12e (`#1332 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1332>`_)
+* Contributors: mergify[bot]
+
+2.6.0 (2025-03-17)
+------------------
+
+2.5.2 (2025-01-21)
+------------------
+* ur_moveit_config: Do not change default controller when using fake hardware (`#1237 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1237>`_)
+* Contributors: Felix Exner
+
+2.5.1 (2024-12-21)
+------------------
+
+2.5.0 (2024-12-18)
+------------------
+* Update package maintainers (backport of `#1203 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1203>`_)
+* Contributors: mergify[bot]
+
+2.2.16 (2024-10-28)
+-------------------
+* Properly handle use_sim_time (`#1146 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1146>`_) (`#1159 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1159>`_)
+* Disable execution_duration_monitoring by default (`#1133 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1133>`_)
+* Added option to publish SRDF file.
+* Contributors: Felix Exner, mergify[bot], v-marsh
+
+2.2.15 (2024-07-26)
+-------------------
+
+2.2.14 (2024-07-01)
+-------------------
+
+2.2.13 (2024-06-17)
+-------------------
+* Add servo node config to disable advertising /get_planning_scene (backport of `#990 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/990>`_)
+* Contributors: Ruddick Lawrence
+
+2.2.12 (2024-05-16)
+-------------------
+* Define default maximum accelerations for MoveIt (backport of `#645 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/645>`_)
+* Fix multi-line strings in DeclareLaunchArgument (`#948 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/948>`_)
+* Contributors: Robert Wilbrandt, Matthijs van der Burgh
+
+2.2.11 (2024-04-08)
+-------------------
+* Add UR30 support (`#930 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/930>`_)
+* Contributors: Felix Exner, Vincenzo Di Pentima
+
 2.2.10 (2024-01-03)
 -------------------
 

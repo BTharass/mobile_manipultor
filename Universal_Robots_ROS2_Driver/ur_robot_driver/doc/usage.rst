@@ -20,7 +20,7 @@ The arguments for launch files can be listed using ``ros2 launch ur_robot_driver
 The most relevant arguments are the following:
 
 
-* ``ur_type`` (\ *mandatory* ) - a type of used UR robot (\ *ur3*\ , *ur3e*\ , *ur5*\ , *ur5e*\ , *ur10*\ , *ur10e*\ , or *ur16e*\ , *ur20*\ ).
+* ``ur_type`` (\ *mandatory* ) - a type of used UR robot (\ *ur3*\ , *ur3e*\ , *ur5*\ , *ur5e*\ , *ur10*\ , *ur10e*\ , or *ur16e*\ , *ur20*\ , *ur30*\ ).
 * ``robot_ip`` (\ *mandatory* ) - IP address by which the root can be reached.
 * ``use_fake_hardware`` (default: *false* ) - use simple hardware emulator from ros2_control.
   Useful for testing launch files, descriptions, etc. See explanation below.
@@ -106,7 +106,7 @@ For details on the Docker image, please see the more detailed guide :ref:`here <
 Example Commands for Testing the Driver
 ---------------------------------------
 
-Allowed UR - Type strings: ``ur3``\ , ``ur3e``\ , ``ur5``\ , ``ur5e``\ , ``ur10``\ , ``ur10e``\ , ``ur16e``\ , ``ur20``.
+Allowed UR - Type strings: ``ur3``\ , ``ur3e``\ , ``ur5``\ , ``ur5e``\ , ``ur10``\ , ``ur10e``\ , ``ur16e``\ , ``ur20``, ``ur30``.
 
 1. Start hardware, simulator or mockup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -190,6 +190,26 @@ To test the driver with the example MoveIt-setup, first start the driver as desc
 
 Now you should be able to use the MoveIt Plugin in rviz2 to plan and execute trajectories with the
 robot as explained `here <https://moveit.picknik.ai/main/doc/tutorials/quickstart_in_rviz/quickstart_in_rviz_tutorial.html>`_.
+
+.. note::
+   The MoveIt configuration provided here has Trajectory Execution Monitoring (TEM) *disabled*, as the
+   Scaled Joint Trajectory Controller may cause trajectories to be executed at a lower velocity
+   than they were originally planned by MoveIt. MoveIt's TEM however is not aware of this
+   deliberate slow-down due to scaling and will in most cases unnecessarily (and unexpectedly)
+   abort goals.
+
+   Until this incompatibility is resolved, the default value for ``execution_duration_monitoring``
+   is set to ``false``. Users who wish to temporarily (re)enable TEM at runtime (for use with
+   other, non-scaling controllers) can do so using the ROS 2 parameter services supported by
+   MoveIt.
+
+   .. literalinclude:: ../../ur_moveit_config/launch/ur_moveit.launch.py
+      :language: python
+      :start-at: trajectory_execution =
+      :end-at: execution_duration_monitoring": False
+      :append: }
+      :dedent: 4
+      :caption: ur_moveit_config/launch/ur_moveit.launch.py
 
 Fake hardware on ROS2 Galactic
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

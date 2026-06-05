@@ -102,105 +102,181 @@ Should the tool's RS485 interface be forwarded to the ROS machine? This is only 
 
 #### Advertised Services
 
-##### add_to_log ([ur_dashboard_msgs/AddToLog](http://docs.ros.org/api/ur_dashboard_msgs/html/srv/AddToLog.html))
+##### add_to_log ([ur_dashboard_msgs/AddToLog](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/AddToLog.html))
 
 Service to add a message to the robot's log
 
-##### brake_release ([std_srvs/Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html))
+##### brake_release ([std_srvs/Trigger](https://docs.ros.org/en/humble/p/std_srvs/srv/Trigger.html))
 
 Service to release the brakes. If the robot is currently powered off, it will get powered on on the fly.
 
-##### clear_operational_mode ([std_srvs/Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html))
+##### clear_operational_mode ([std_srvs/Trigger](https://docs.ros.org/en/humble/p/std_srvs/srv/Trigger.html))
 
 If this service is called the operational mode can again be changed from PolyScope, and the user password is enabled.
 
-##### close_popup ([std_srvs/Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html))
+##### close_popup ([std_srvs/Trigger](https://docs.ros.org/en/humble/p/std_srvs/srv/Trigger.html))
 
 Close a (non-safety) popup on the teach pendant.
 
-##### close_safety_popup ([std_srvs/Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html))
+##### close_safety_popup ([std_srvs/Trigger](https://docs.ros.org/en/humble/p/std_srvs/srv/Trigger.html))
 
 Close a safety popup on the teach pendant.
 
-##### connect ([std_srvs/Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html))
+##### connect ([std_srvs/Trigger](https://docs.ros.org/en/humble/p/std_srvs/srv/Trigger.html))
 
 Service to reconnect to the dashboard server
 
-##### get_loaded_program ([ur_dashboard_msgs/GetLoadedProgram](http://docs.ros.org/api/ur_dashboard_msgs/html/srv/GetLoadedProgram.html))
+##### download_program ([ur_dashboard_msgs/Download](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/DownloadProgram.html))
 
-Load a robot installation from a file
+**PolyScope X only**: Download a program with the given name from the robot and save it as
+`*.urpx` file locally. This service is only available on a PolyScope X robot with version >=
+10.12.0.
 
-##### get_robot_mode ([ur_dashboard_msgs/GetRobotMode](http://docs.ros.org/api/ur_dashboard_msgs/html/srv/GetRobotMode.html))
+##### generate_flight_report ([ur_dashboard_msgs/GenerateFlightReport](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/GenerateFlightReport.html))
+
+**CB3 | PolyScope 5** Generate flight report of the chosen type, defaults to SYSTEM. It is required to wait at least 30 seconds between triggering software or controller reports.
+
+##### generate_support_file ([ur_dashboard_msgs/GenerateSupportFile](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/GenerateSupportFile.html))
+
+**CB3 | PolyScope 5** Generate a support file at the specified location. Location is relative to the programs folder, if saving to a subfolder it must exist prior to the service call.
+Defaults to saving to the programs folder
+
+##### get_loaded_program ([ur_dashboard_msgs/GetLoadedProgram](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/GetLoadedProgram.html))
+
+Get the name of the currently loaded program.
+
+##### get_operational_mode ([ur_dashboard_msgs/GetOperationalMode](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/GetOperationalMode.html))
+
+**PolyScope 5 | PolyScope X 10.12.0 onwards** Get current operational mode of the robot
+
+##### get_polyscope_version ([ur_dashboard_msgs/GetPolyScopeVersion](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/GetPolyScopeVersion.html))
+
+**CB3 | PolyScope 5** Get polyScope version of robot
+
+##### get_programs ([ur_dashboard_msgs/GetPrograms](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/GetPrograms.html))
+
+**PolyScope X only**: Get a list of all programs on the robot. This service is only available on a
+PolyScope X robot with version >= 10.12.0.
+
+##### get_robot_mode ([ur_dashboard_msgs/GetRobotMode](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/GetRobotMode.html))
 
 Service to query the current robot mode
 
-##### get_safety_mode ([ur_dashboard_msgs/GetSafetyMode](http://docs.ros.org/api/ur_dashboard_msgs/html/srv/GetSafetyMode.html))
+##### get_robot_model ([ur_dashboard_msgs/GetRobotModel](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/GetRobotModel.html))
+
+**CB3 | PolyScope 5** Get the robot model, in the format URx. It should be noted this call does not differentiate between e-series and CB3, so UR5 and UR5e will both report as UR5
+
+##### get_safety_mode ([ur_dashboard_msgs/GetSafetyMode](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/GetSafetyMode.html))
 
 Service to query the current safety mode
 
-##### load_installation ([ur_dashboard_msgs/Load](http://docs.ros.org/api/ur_dashboard_msgs/html/srv/Load.html))
+##### get_safety_status ([ur_dashboard_msgs/GetSafetyStatus](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/GetSafetyStatus.html))
+
+**PolyScope 5 only** Get current safety status of the robot system, this is more detailed than get_safety_mode and should be preferred when possible
+
+##### get_serial_number ([ur_dashboard_msgs/GetSerialNumber](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/GetSerialNumber.html))
+
+**CB3 | PolyScope 5** Get serial number of robot
+
+##### get_user_role ([ur_dashboard_msgs/GetUserRole](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/GetUserRole.html))
+
+**CB3 only** Get current user role
+
+##### is_in_remote_control ([ur_dashboard_msgs/IsInRemoteControl](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/IsInRemoteControl.html))
+
+Service to query whether the robot is in remote control.
+
+##### load_installation ([ur_dashboard_msgs/Load](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/Load.html))
 
 Load a robot installation from a file
 
-##### load_program ([ur_dashboard_msgs/Load](http://docs.ros.org/api/ur_dashboard_msgs/html/srv/Load.html))
+##### load_program ([ur_dashboard_msgs/Load](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/Load.html))
 
-Load a robot program from a file
+Load a robot program from a file on the robot. On PolyScope 5, this can be either file in the
+robot's programs folder or an absolute path to a file. The filename has to include the `.urp`
+ending. On PolyScope X, this has to be the program's name as shown in the Programs overview on the
+robot, without a `.urpx` suffix.
 
-##### pause ([std_srvs/Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html))
+##### pause ([std_srvs/Trigger](https://docs.ros.org/en/humble/p/std_srvs/srv/Trigger.html))
 
 Pause a running program.
 
-##### play ([std_srvs/Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html))
+##### play ([std_srvs/Trigger](https://docs.ros.org/en/humble/p/std_srvs/srv/Trigger.html))
 
 Start execution of a previously loaded program
 
-##### popup ([ur_dashboard_msgs/Popup](http://docs.ros.org/api/ur_dashboard_msgs/html/srv/Popup.html))
+##### popup ([ur_dashboard_msgs/Popup](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/Popup.html))
 
 Service to show a popup on the UR Teach pendant.
 
-##### power_off ([std_srvs/Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html))
+##### power_off ([std_srvs/Trigger](https://docs.ros.org/en/humble/p/std_srvs/srv/Trigger.html))
 
 Power off the robot motors
 
-##### power_on ([std_srvs/Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html))
+##### power_on ([std_srvs/Trigger](https://docs.ros.org/en/humble/p/std_srvs/srv/Trigger.html))
 
 Power on the robot motors. To fully start the robot, call 'brake_release' afterwards.
 
-##### program_running ([ur_dashboard_msgs/IsProgramRunning](http://docs.ros.org/api/ur_dashboard_msgs/html/srv/IsProgramRunning.html))
+##### program_running ([ur_dashboard_msgs/IsProgramRunning](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/IsProgramRunning.html))
 
 Query whether there is currently a program running
 
-##### program_saved ([ur_dashboard_msgs/IsProgramSaved](http://docs.ros.org/api/ur_dashboard_msgs/html/srv/IsProgramSaved.html))
+##### program_saved ([ur_dashboard_msgs/IsProgramSaved](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/IsProgramSaved.html))
 
 Query whether the current program is saved
 
-##### program_state ([ur_dashboard_msgs/GetProgramState](http://docs.ros.org/api/ur_dashboard_msgs/html/srv/GetProgramState.html))
+##### program_state ([ur_dashboard_msgs/GetProgramState](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/GetProgramState.html))
 
 Service to query the current program state
 
-##### quit ([ur_dashboard_msgs/GetLoadedProgram](http://docs.ros.org/api/ur_dashboard_msgs/html/srv/GetLoadedProgram.html))
+##### quit ([ur_dashboard_msgs/GetLoadedProgram](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/GetLoadedProgram.html))
 
 Disconnect from the dashboard service.
 
-##### raw_request ([ur_dashboard_msgs/RawRequest](http://docs.ros.org/api/ur_dashboard_msgs/html/srv/RawRequest.html))
+##### raw_request ([ur_dashboard_msgs/RawRequest](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/RawRequest.html))
 
 General purpose service to send arbitrary messages to the dashboard server
 
-##### restart_safety ([std_srvs/Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html))
+##### restart_safety ([std_srvs/Trigger](https://docs.ros.org/en/humble/p/std_srvs/srv/Trigger.html))
 
 Used when robot gets a safety fault or violation to restart the safety. After safety has been rebooted the robot will be in Power Off. NOTE: You should always ensure it is okay to restart the system. It is highly recommended to check the error log before using this command (either via PolyScope or e.g. ssh connection).
 
-##### shutdown ([std_srvs/Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html))
+##### resume ([std_srvs/Trigger](http://docs.ros.org/en/rolling/p/std_srvs/srv/Trigger.html))
+
+**PolyScope X only**: Resume a paused program on a PolyScope X robot. This service is only available on a PolyScope X
+robot with version >= 10.11.0.
+
+##### set_operational_mode ([ur_dashboard_msgs/SetOperationalMode](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/SetOperationalMode.html))
+
+**PolyScope 5 only** Set operational mode of the robot. When this has been called, the teach pendant can not be used to change the operational mode until clear_operational_mode has been called.
+
+##### set_user_role ([ur_dashboard_msgs/SetUserRole](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/SetUserRole.html))
+
+**CB3 only** Set user role on the robot
+
+##### shutdown ([std_srvs/Trigger](https://docs.ros.org/en/humble/p/std_srvs/srv/Trigger.html))
 
 Shutdown the robot controller
 
-##### stop ([std_srvs/Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html))
+##### stop ([std_srvs/Trigger](https://docs.ros.org/en/humble/p/std_srvs/srv/Trigger.html))
 
 Stop program execution on the robot
 
-##### unlock_protective_stop ([std_srvs/Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html))
+##### unlock_protective_stop ([std_srvs/Trigger](https://docs.ros.org/en/humble/p/std_srvs/srv/Trigger.html))
 
 Dismiss a protective stop to continue robot movements. NOTE: It is the responsibility of the user to ensure the cause of the protective stop is resolved before calling this service.
+
+##### update_program ([ur_dashboard_msgs/UploadProgram](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/UploadProgram.html))
+
+**PolyScope X only**: Update a program on the robot. If the program does not exist or the program
+is currently loaded, this service call will fail. This service is only available on a PolyScope X
+robot with version >= 10.12.0.
+
+##### upload_program ([ur_dashboard_msgs/UploadProgram](https://docs.ros.org/en/humble/p/ur_dashboard_msgs/srv/UploadProgram.html))
+
+**PolyScope X only**: Upload a program to the robot. If a program with the same name already
+exists, this service call will fail. This service is only available on a PolyScope X robot with
+version >= 10.12.0.
 
 #### Parameters
 

@@ -1,0 +1,15 @@
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/ament_index/resource_index/package_run_dependencies/mir_robot
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/ament_index/resource_index/parent_prefix_path/mir_robot
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/mir_robot/environment/ament_prefix_path.sh
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/mir_robot/environment/ament_prefix_path.dsv
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/mir_robot/environment/path.sh
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/mir_robot/environment/path.dsv
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/mir_robot/local_setup.bash
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/mir_robot/local_setup.sh
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/mir_robot/local_setup.zsh
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/mir_robot/local_setup.dsv
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/mir_robot/package.dsv
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/ament_index/resource_index/packages/mir_robot
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/mir_robot/cmake/mir_robotConfig.cmake
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/mir_robot/cmake/mir_robotConfig-version.cmake
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_robot/share/mir_robot/package.xml

@@ -2,6 +2,81 @@
 Changelog for package ur_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.13.1 (2026-05-15)
+-------------------
+
+2.13.0 (2026-04-09)
+-------------------
+
+2.12.0 (2026-01-13)
+-------------------
+
+2.11.0 (2025-12-01)
+-------------------
+
+2.10.0 (2025-10-23)
+-------------------
+* Add support for UR18 (backport `#1524 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1524>`_) (`#1525 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1525>`_)
+* Contributors: mergify[bot]
+
+2.9.0 (2025-09-16)
+------------------
+* Add support for UR8 Long (`#1491 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1491>`_)
+* Contributors: Felix Exner
+
+2.8.1 (2025-06-11)
+------------------
+
+2.8.0 (2025-05-20)
+------------------
+* Add support for launching a UR15 robot (`#1359 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1359>`_)
+* Contributors: Felix Exner
+
+2.7.0 (2025-04-10)
+------------------
+* Add support for UR7e and UR12e (`#1332 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1332>`_)
+* Contributors: mergify[bot]
+
+2.6.0 (2025-03-17)
+------------------
+* Fix doc links (`#1247 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1247>`_)
+* Contributors: Felix Exner
+
+2.5.2 (2025-01-21)
+------------------
+* Update pre-commit the same as on the main branch (`#1232 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1232>`_)
+* Contributors: Felix Exner
+
+2.5.1 (2024-12-21)
+------------------
+
+2.5.0 (2024-12-18)
+------------------
+* Update package maintainers (backport of `#1203 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1203>`_)
+* Forward trajectory controller (backport of `#944 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/944>`_)
+* Contributors: mergify[bot]
+
+2.2.16 (2024-10-28)
+-------------------
+
+2.2.15 (2024-07-26)
+-------------------
+
+2.2.14 (2024-07-01)
+-------------------
+
+2.2.13 (2024-06-17)
+-------------------
+* Simplify launch file for ur_bringup pkg (`#1004 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1004>`_)
+* Add calibration file to launch arguments (`#1001 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/1001>`_)
+* Contributors: Vincenzo Di Pentima
+
+2.2.12 (2024-05-16)
+-------------------
+
+2.2.11 (2024-04-08)
+-------------------
+
 2.2.10 (2024-01-03)
 -------------------
 
@@ -58,7 +133,7 @@ Changelog for package ur_bringup
 * Update MoveIt file for working with simulation. (`#278 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/278>`_)
 * Start the tool communication script if the flag is set (`#267 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/267>`_)
 * Used ``spawner`` instead of ``spanwer.py`` in launch files (`#293 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/293>`_)
-* Do not start dashboard client if FakeHardware simuation is used. (`#286 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/286>`_)
+* Do not start dashboard client if FakeHardware simulation is used. (`#286 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/286>`_)
 * Use scaled trajectory controller per default. (`#287 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/287>`_)
 * Separate control node (`#281 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/281>`_)
 * Fix launch file arguments. (`#243 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/issues/243>`_)

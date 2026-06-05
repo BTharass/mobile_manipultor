@@ -26,93 +26,40 @@
 # CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
-
-
+import os
+import sys
 import time
 import unittest
 
+import launch_testing
 import pytest
 import rclpy
-from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, IncludeLaunchDescription
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
-from launch_ros.substitutions import FindPackagePrefix, FindPackageShare
-from launch_testing.actions import ReadyToTest
 from rclpy.node import Node
-from std_srvs.srv import Trigger
-from ur_dashboard_msgs.msg import RobotMode
-from ur_dashboard_msgs.srv import (
-    GetLoadedProgram,
-    GetProgramState,
-    GetRobotMode,
-    IsProgramRunning,
-    Load,
-)
+from ur_dashboard_msgs.msg import RobotMode, UserRole, OperationalMode, SafetyStatus
 
-TIMEOUT_WAIT_SERVICE = 10
-# If we download the docker image simultaneously to the tests, it can take quite some time until the
-# dashboard server is reachable and usable.
-TIMEOUT_WAIT_SERVICE_INITIAL = 120
+sys.path.append(os.path.dirname(__file__))
+from test_common import (  # noqa: E402
+    DashboardInterface,
+    generate_dashboard_test_description,
+)
 
 
 @pytest.mark.launch_test
-def generate_test_description():
-    declared_arguments = []
-
-    declared_arguments.append(
-        DeclareLaunchArgument(
-            "ur_type",
-            default_value="ur5e",
-            description="Type/series of used UR robot.",
-            choices=["ur3", "ur3e", "ur5", "ur5e", "ur10", "ur10e", "ur16e", "ur20"],
-        )
-    )
-
-    ur_type = LaunchConfiguration("ur_type")
-
-    dashboard_client = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            PathJoinSubstitution(
-                [
-                    FindPackageShare("ur_robot_driver"),
-                    "launch",
-                    "ur_dashboard_client.launch.py",
-                ]
-            )
-        ),
-        launch_arguments={
-            "robot_ip": "192.168.56.101",
-        }.items(),
-    )
-    ursim = ExecuteProcess(
-        cmd=[
-            PathJoinSubstitution(
-                [
-                    FindPackagePrefix("ur_client_library"),
-                    "lib",
-                    "ur_client_library",
-                    "start_ursim.sh",
-                ]
-            ),
-            " ",
-            "-m ",
-            ur_type,
-        ],
-        name="start_ursim",
-        output="screen",
-    )
-
-    return LaunchDescription(declared_arguments + [ReadyToTest(), dashboard_client, ursim])
+@launch_testing.parametrize(
+    "ursim_version, ur_type",
+    [("latest", "ur30"), ("10.12.0", "ur15"), ("3.15.8", "ur10")],
+)
+def generate_test_description(ursim_version, ur_type):
+    return generate_dashboard_test_description(ursim_version, ur_type)
 
 
 class DashboardClientTest(unittest.TestCase):
     @classmethod
-    def setUpClass(cls):
+    def setUpClass(cls, ursim_version):
         # Initialize the ROS context
         rclpy.init()
         cls.node = Node("dashboard_client_test")
-        cls.init_robot(cls)
+        cls.init_robot(cls, ursim_version)
 
     @classmethod
     def tearDownClass(cls):
@@ -120,101 +67,168 @@ class DashboardClientTest(unittest.TestCase):
         cls.node.destroy_node()
         rclpy.shutdown()
 
-    def init_robot(self):
+    def init_robot(self, ursim_version):
+        self._dashboard_interface = DashboardInterface(self.node)
+        result = self._dashboard_interface.is_in_remote_control()
+        self.remote_control = result.remote_control
+        if self.remote_control or ursim_version.startswith("5.") or ursim_version == "latest":
+            self._dashboard_interface.power_off()  # create a defined starting state
 
-        # We wait longer for the first client, as the robot is still starting up
-        power_on_client = waitForService(
-            self.node, "/dashboard_client/power_on", Trigger, timeout=TIMEOUT_WAIT_SERVICE_INITIAL
-        )
-
-        # Connect to all other expected services
-        dashboard_interfaces = {
-            "power_off": Trigger,
-            "brake_release": Trigger,
-            "unlock_protective_stop": Trigger,
-            "restart_safety": Trigger,
-            "get_robot_mode": GetRobotMode,
-            "load_installation": Load,
-            "load_program": Load,
-            "close_popup": Trigger,
-            "get_loaded_program": GetLoadedProgram,
-            "program_state": GetProgramState,
-            "program_running": IsProgramRunning,
-            "play": Trigger,
-            "stop": Trigger,
-        }
-        self.dashboard_clients = {
-            srv_name: waitForService(self.node, f"/dashboard_client/{srv_name}", srv_type)
-            for (srv_name, srv_type) in dashboard_interfaces.items()
-        }
-
-        # Add first client to dict
-        self.dashboard_clients["power_on"] = power_on_client
-
-    #
-    # Test functions
-    #
-
-    def test_switch_on(self):
+    def test_switch_on(self, ursim_version):
         """Test power on a robot."""
+        if ursim_version.startswith("10."):
+            self.skipTest("Currently, this test isn't supported on PolyScope X")
+
         # Wait until the robot is booted completely
         end_time = time.time() + 10
         mode = RobotMode.DISCONNECTED
         while mode != RobotMode.POWER_OFF and time.time() < end_time:
             time.sleep(0.1)
-            result = self.call_dashboard_service("get_robot_mode", GetRobotMode.Request())
+            result = self._dashboard_interface.get_robot_mode()
             self.assertTrue(result.success)
             mode = result.robot_mode.mode
 
         # Power on robot
-        self.assertTrue(self.call_dashboard_service("power_on", Trigger.Request()).success)
+        self.assertTrue(self._dashboard_interface.power_on().success)
 
         # Wait until robot mode changes
         end_time = time.time() + 10
         mode = RobotMode.DISCONNECTED
         while mode not in (RobotMode.IDLE, RobotMode.RUNNING) and time.time() < end_time:
             time.sleep(0.1)
-            result = self.call_dashboard_service("get_robot_mode", GetRobotMode.Request())
+            result = self._dashboard_interface.get_robot_mode()
             self.assertTrue(result.success)
             mode = result.robot_mode.mode
 
         self.assertIn(mode, (RobotMode.IDLE, RobotMode.RUNNING))
 
         # Release robot brakes
-        self.assertTrue(self.call_dashboard_service("brake_release", Trigger.Request()).success)
+        self.assertTrue(self._dashboard_interface.brake_release().success)
 
         # Wait until robot mode is RUNNING
         end_time = time.time() + 10
         mode = RobotMode.DISCONNECTED
         while mode != RobotMode.RUNNING and time.time() < end_time:
             time.sleep(0.1)
-            result = self.call_dashboard_service("get_robot_mode", GetRobotMode.Request())
+            result = self._dashboard_interface.get_robot_mode()
             self.assertTrue(result.success)
             mode = result.robot_mode.mode
 
         self.assertEqual(mode, RobotMode.RUNNING)
 
-    #
-    # Utility functions
-    #
+    def test_get_robot_mode(self):
+        """Test get robot mode."""
+        result = self._dashboard_interface.get_robot_mode()
+        self.assertTrue(result.success)
 
-    def call_dashboard_service(self, srv_name, request):
-        self.node.get_logger().info(
-            f"Calling dashboard service '{srv_name}' with request {request}"
+    def test_program_management(self, ursim_version):
+        """Test uploading a program."""
+        if not ursim_version.startswith("10."):
+            self.skipTest("Uploading a program is only supported on PolyScope X")
+        result = self._dashboard_interface.upload_program(
+            file_path=os.path.join(os.path.dirname(__file__), "test_program.urpx")
         )
-        future = self.dashboard_clients[srv_name].call_async(request)
-        rclpy.spin_until_future_complete(self.node, future)
-        if future.result() is not None:
-            self.node.get_logger().info(f"Received result {future.result()}")
-            return future.result()
-        else:
-            raise Exception(f"Exception while calling service: {future.exception()}")
+        self.assertTrue(result.success)
+        self.assertEqual(result.program_name, "test upload")
 
+        result = self._dashboard_interface.get_programs()
+        self.assertTrue(result.success)
+        self.assertTrue(len(result.programs) > 0)
 
-def waitForService(node, srv_name, srv_type, timeout=TIMEOUT_WAIT_SERVICE):
-    client = node.create_client(srv_type, srv_name)
-    if client.wait_for_service(timeout) is False:
-        raise Exception(f"Could not reach service '{srv_name}' within timeout of {timeout}")
+        # TODO: Updating a program requires an open UI session. We would need to start a browser
+        # from within this test. Maybe it would be better to turn those tests into unittests, as
+        # functionality is tested in the client library, already.
+        # result = self._dashboard_interface.update_program(
+        # file_path=os.path.join(os.path.dirname(__file__), "test_program.urpx")
+        # )
+        # self.assertTrue(result.success)
+        # self.assertEqual(result.program_name, "test upload")
 
-    node.get_logger().info(f"Successfully connected to service '{srv_name}'")
-    return client
+        result = self._dashboard_interface.download_program(
+            program_name="test upload", target_path="/tmp/test_program_download.urpx"
+        )
+        self.assertTrue(result.success)
+
+    def test_get_polyscope_version(self, ursim_version):
+        if ursim_version.startswith("10."):
+            self.skipTest("Getting polyscope version is not supported on PolyScope X")
+        resp = self._dashboard_interface.get_polyscope_version()
+        self.assertTrue(resp.success)
+        self.assertNotEqual(resp.version.major, 0)
+
+    def test_get_serial_number(self, ursim_version):
+        if ursim_version.startswith("10."):
+            self.skipTest("Getting serial number is not supported on PolyScope X")
+        resp = self._dashboard_interface.get_serial_number()
+        self.assertTrue(resp.success)
+        self.assertNotEqual(resp.serial_number, 0)
+
+    def test_user_role_services(self, ursim_version):
+        if not ursim_version.startswith("3."):
+            self.skipTest("User role services only supported on CB3")
+        roles = [
+            UserRole.PROGRAMMER,
+            UserRole.OPERATOR,
+            UserRole.NONE,
+            UserRole.LOCKED,
+            UserRole.RESTRICTED,
+        ]
+        for role in roles:
+            req = UserRole(role=role)
+            resp = self._dashboard_interface.set_user_role(user_role=req)
+            self.assertTrue(resp.success)
+            resp = self._dashboard_interface.get_user_role()
+            self.assertTrue(resp.success)
+            self.assertEqual(role, resp.user_role.role)
+
+    # Not all operational mode services are supported in PolyScope X yet
+    def test_operational_mode_services(self, ursim_version):
+        if not ursim_version.startswith("5."):
+            self.skipTest(
+                "Operational mode services only supported on PolyScope 5 robots, skipping tests"
+            )
+        modes = [OperationalMode.MANUAL, OperationalMode.AUTOMATIC]
+        for mode in modes:
+            req = OperationalMode(mode=mode)
+            resp = self._dashboard_interface.set_operational_mode(operational_mode=req)
+            self.assertTrue(resp.success)
+            resp = self._dashboard_interface.get_operational_mode()
+            self.assertTrue(resp.success)
+            self.assertEqual(mode, resp.operational_mode.mode)
+        resp = self._dashboard_interface.clear_operational_mode()
+        self.assertTrue(resp.success)
+
+    def test_get_operational_mode(self, ursim_version):
+        if not ursim_version.startswith("10."):
+            self.skipTest("Specific test for PolyScope X, skipping")
+        resp = self._dashboard_interface.get_operational_mode()
+        self.assertTrue(resp.success)
+        self.assertIn(resp.operational_mode.mode, ["MANUAL", "AUTOMATIC"])
+
+    def test_get_robot_model(self, ursim_version):
+        if ursim_version.startswith("10."):
+            self.skipTest("Getting robot model not supported on PolyScope X, skipping tests")
+        resp = self._dashboard_interface.get_robot_model()
+        self.assertTrue(resp.success)
+        self.assertTrue("UR" in resp.robot_model)
+
+    def test_get_safety_status(self, ursim_version):
+        if not ursim_version.startswith("5."):
+            self.skipTest("Safety status only supported on PolyScope 5 robots, skipping tests")
+        resp = self._dashboard_interface.get_safety_status()
+        self.assertTrue(resp.success)
+        self.assertEqual(resp.safety_status.status, SafetyStatus.NORMAL)
+
+    def test_generate_flight_report(self, ursim_version):
+        if ursim_version.startswith("10."):
+            self.skipTest("Generating flight report not supported on PolyScope X, skipping tests")
+        resp = self._dashboard_interface.generate_flight_report()
+        self.assertTrue(resp.success)
+        self.assertNotEqual(resp.report_id, "")
+
+    def test_generate_support_file(self, ursim_version):
+        if ursim_version.startswith("10."):
+            self.skipTest("Generating support file not supported on PolyScope X, skipping tests")
+        resp = self._dashboard_interface.generate_support_file()
+        self.assertTrue(resp.success)
+        self.assertNotEqual(resp.generated_file_name, "")

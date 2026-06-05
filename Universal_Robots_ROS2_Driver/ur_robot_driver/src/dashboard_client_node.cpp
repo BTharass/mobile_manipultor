@@ -37,9 +37,10 @@
 
 #include "ur_robot_driver/dashboard_client_ros.hpp"
 
+#include <memory>
 #include <string>
 
-#include "rclcpp/rclcpp.hpp"
+#include <rclcpp/logging.hpp>
 #include "ur_robot_driver/urcl_log_handler.hpp"
 
 int main(int argc, char** argv)
@@ -53,7 +54,14 @@ int main(int argc, char** argv)
 
   ur_robot_driver::registerUrclLogHandler("");  // Set empty tf_prefix at the moment
 
-  ur_robot_driver::DashboardClientROS client(node, robot_ip);
+  std::shared_ptr<ur_robot_driver::DashboardClientROS> client;
+  try {
+    client = std::make_shared<ur_robot_driver::DashboardClientROS>(node, robot_ip);
+  } catch (const urcl::UrException& e) {
+    RCLCPP_ERROR(rclcpp::get_logger("Dashboard_Client"),
+                 "Error raised during Dashboard Client startup: %s. Exiting dashboard client now.", e.what());
+    return 1;
+  }
 
   rclcpp::spin(node);
 

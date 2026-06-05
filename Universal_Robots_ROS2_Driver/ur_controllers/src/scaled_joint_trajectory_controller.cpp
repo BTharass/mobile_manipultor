@@ -50,6 +50,12 @@ controller_interface::CallbackReturn ScaledJointTrajectoryController::on_init()
   // Create the parameter listener and get the parameters
   scaled_param_listener_ = std::make_shared<scaled_joint_trajectory_controller::ParamListener>(get_node());
   scaled_params_ = scaled_param_listener_->get_params();
+  if (!scaled_params_.speed_scaling_interface_name.empty()) {
+    RCLCPP_INFO(get_node()->get_logger(), "Using scaling state from the hardware from interface %s.",
+                scaled_params_.speed_scaling_interface_name.c_str());
+  } else {
+    RCLCPP_INFO(get_node()->get_logger(), "No scaling interface set. This controller will not use speed scaling.");
+  }
 
   return JointTrajectoryController::on_init();
 }
@@ -58,31 +64,45 @@ controller_interface::InterfaceConfiguration ScaledJointTrajectoryController::st
 {
   controller_interface::InterfaceConfiguration conf;
   conf = JointTrajectoryController::state_interface_configuration();
-  conf.names.push_back(scaled_params_.speed_scaling_interface_name);
+
+  if (!scaled_params_.speed_scaling_interface_name.empty()) {
+    conf.names.push_back(scaled_params_.speed_scaling_interface_name);
+  }
 
   return conf;
 }
 
+controller_interface::CallbackReturn ScaledJointTrajectoryController::on_configure(const rclcpp_lifecycle::State& state)
+{
+  update_period_ = rclcpp::Duration(0.0, static_cast<uint32_t>(1.0e9 / static_cast<double>(get_update_rate())));
+
+  return JointTrajectoryController::on_configure(state);
+}
+
 controller_interface::CallbackReturn ScaledJointTrajectoryController::on_activate(const rclcpp_lifecycle::State& state)
 {
-  TimeData time_data;
-  time_data.time = get_node()->now();
-  time_data.period = rclcpp::Duration::from_nanoseconds(0);
-  time_data.uptime = get_node()->now();
-  time_data_.initRT(time_data);
+  // Set scaling interfaces
+  if (!scaled_params_.speed_scaling_interface_name.empty()) {
+    auto it = std::find_if(state_interfaces_.begin(), state_interfaces_.end(), [&](auto& interface) {
+      return (interface.get_name() == scaled_params_.speed_scaling_interface_name);
+    });
+    if (it != state_interfaces_.end()) {
+      scaling_state_interface_ = *it;
+    } else {
+      RCLCPP_ERROR(get_node()->get_logger(), "Did not find speed scaling interface in state interfaces.");
+    }
+  }
+  last_commanded_time_ = rclcpp::Time();
+
   return JointTrajectoryController::on_activate(state);
 }
 
 controller_interface::return_type ScaledJointTrajectoryController::update(const rclcpp::Time& time,
                                                                           const rclcpp::Duration& period)
 {
-  if (state_interfaces_.back().get_name() == scaled_params_.speed_scaling_interface_name) {
-    scaling_factor_ = state_interfaces_.back().get_value();
-  } else {
-    RCLCPP_ERROR(get_node()->get_logger(), "Speed scaling interface (%s) not found in hardware interface.",
-                 scaled_params_.speed_scaling_interface_name.c_str());
+  if (scaling_state_interface_.has_value()) {
+    scaling_factor_ = scaling_state_interface_->get().get_value();
   }
-
   if (get_state().id() == lifecycle_msgs::msg::State::PRIMARY_STATE_INACTIVE) {
     return controller_interface::return_type::OK;
   }
@@ -91,9 +111,14 @@ controller_interface::return_type ScaledJointTrajectoryController::update(const 
   if (param_listener_->is_old(params_)) {
     params_ = param_listener_->get_params();
     default_tolerances_ = get_segment_tolerances(logger, params_);
+    // update the PID gains
+    // variable use_closed_loop_pid_adapter_ is updated in on_configure only
+    if (use_closed_loop_pid_adapter_) {
+      update_pids();
+    }
   }
 
-  auto compute_error_for_joint = [&](JointTrajectoryPoint& error, int index, const JointTrajectoryPoint& current,
+  auto compute_error_for_joint = [&](JointTrajectoryPoint& error, size_t index, const JointTrajectoryPoint& current,
                                      const JointTrajectoryPoint& desired) {
     // error defined as the difference between current and desired
     if (joints_angle_wraparound_[index]) {
@@ -118,7 +143,7 @@ controller_interface::return_type ScaledJointTrajectoryController::update(const 
   auto current_external_msg = traj_external_point_ptr_->get_trajectory_msg();
   auto new_external_msg = traj_msg_external_point_ptr_.readFromRT();
   // Discard, if a goal is pending but still not active (somewhere stuck in goal_handle_timer_)
-  if (current_external_msg != *new_external_msg && (*(rt_has_pending_goal_.readFromRT()) && !active_goal) == false) {
+  if (current_external_msg != *new_external_msg && (rt_has_pending_goal_ && !active_goal) == false) {
     fill_partial_goal(*new_external_msg);
     sort_to_local_joint_order(*new_external_msg);
     // TODO(denis): Add here integration of position and velocity
@@ -134,38 +159,36 @@ controller_interface::return_type ScaledJointTrajectoryController::update(const 
   };
 
   // current state update
-  state_current_.time_from_start.set__sec(0);
+  state_current_.time_from_start.sec = 0;
+  state_current_.time_from_start.nanosec = 0;
   read_state_from_state_interfaces(state_current_);
 
   // currently carrying out a trajectory
   if (has_active_trajectory()) {
-    // Main Speed scaling difference...
-    // Adjust time with scaling factor
-    TimeData time_data;
-    time_data.time = time;
-    rcl_duration_value_t t_period = (time_data.time - time_data_.readFromRT()->time).nanoseconds();
-    time_data.period = rclcpp::Duration::from_nanoseconds(scaling_factor_ * t_period);
-    time_data.uptime = time_data_.readFromRT()->uptime + time_data.period;
-    rclcpp::Time traj_time = time_data_.readFromRT()->uptime + rclcpp::Duration::from_nanoseconds(t_period);
-    time_data_.reset();
-    time_data_.initRT(time_data);
-
     bool first_sample = false;
     // if sampling the first time, set the point before you sample
     if (!traj_external_point_ptr_->is_sampled_already()) {
       first_sample = true;
       if (params_.open_loop_control) {
-        traj_external_point_ptr_->set_point_before_trajectory_msg(traj_time, last_commanded_state_,
+        traj_external_point_ptr_->set_point_before_trajectory_msg(last_commanded_time_, last_commanded_state_,
                                                                   joints_angle_wraparound_);
       } else {
-        traj_external_point_ptr_->set_point_before_trajectory_msg(traj_time, state_current_, joints_angle_wraparound_);
+        traj_external_point_ptr_->set_point_before_trajectory_msg(time, state_current_, joints_angle_wraparound_);
       }
+      traj_time_ = time;
+    } else {
+      traj_time_ += period * scaling_factor_;
     }
+    joint_trajectory_controller::TrajectoryPointConstIter start_segment_itr, end_segment_itr;
+    // Sample expected state from the trajectory
+    traj_external_point_ptr_->sample(traj_time_, interpolation_method_, state_desired_, start_segment_itr,
+                                     end_segment_itr);
+    state_desired_.time_from_start = traj_time_ - traj_external_point_ptr_->time_from_start();
 
     // find segment for current timestamp
-    joint_trajectory_controller::TrajectoryPointConstIter start_segment_itr, end_segment_itr;
-    const bool valid_point = traj_external_point_ptr_->sample(traj_time, interpolation_method_, state_desired_,
-                                                              start_segment_itr, end_segment_itr);
+    const bool valid_point = traj_external_point_ptr_->sample(traj_time_ + update_period_, interpolation_method_,
+                                                              command_next_, start_segment_itr, end_segment_itr);
+    state_current_.time_from_start = time - traj_external_point_ptr_->time_from_start();
 
     if (valid_point) {
       const rclcpp::Time traj_start = traj_external_point_ptr_->time_from_start();
@@ -176,7 +199,7 @@ controller_interface::return_type ScaledJointTrajectoryController::update(const 
       // time_difference is
       // - negative until first point is reached
       // - counting from zero to time_from_start of next point
-      const double time_difference = time_data.uptime.seconds() - segment_time_from_start.seconds();
+      double time_difference = traj_time_.seconds() - segment_time_from_start.seconds();
       bool tolerance_violated_while_moving = false;
       bool outside_goal_tolerance = false;
       bool within_goal_time = true;
@@ -185,8 +208,7 @@ controller_interface::return_type ScaledJointTrajectoryController::update(const 
 
       // have we reached the end, are not holding position, and is a timeout configured?
       // Check independently of other tolerances
-      if (!before_last_point && *(rt_is_holding_.readFromRT()) == false && cmd_timeout_ > 0.0 &&
-          time_difference > cmd_timeout_) {
+      if (!before_last_point && !rt_is_holding_ && cmd_timeout_ > 0.0 && time_difference > cmd_timeout_) {
         RCLCPP_WARN(logger, "Aborted due to command timeout");
 
         traj_msg_external_point_ptr_.reset();
@@ -200,13 +222,13 @@ controller_interface::return_type ScaledJointTrajectoryController::update(const 
         // Always check the state tolerance on the first sample in case the first sample
         // is the last point
         // print output per default, goal will be aborted afterwards
-        if ((before_last_point || first_sample) && *(rt_is_holding_.readFromRT()) == false &&
+        if ((before_last_point || first_sample) && !rt_is_holding_ &&
             !check_state_tolerance_per_joint(state_error_, index, active_tol->state_tolerance[index],
                                              true /* show_errors */)) {
           tolerance_violated_while_moving = true;
         }
         // past the final point, check that we end up inside goal tolerance
-        if (!before_last_point && *(rt_is_holding_.readFromRT()) == false &&
+        if (!before_last_point && !rt_is_holding_ &&
             !check_state_tolerance_per_joint(state_error_, index, active_tol->goal_state_tolerance[index],
                                              false /* show_errors */)) {
           outside_goal_tolerance = true;
@@ -228,7 +250,7 @@ controller_interface::return_type ScaledJointTrajectoryController::update(const 
         if (use_closed_loop_pid_adapter_) {
           // Update PIDs
           for (auto i = 0ul; i < dof_; ++i) {
-            tmp_command_[i] = (state_desired_.velocities[i] * ff_velocity_scale_[i]) +
+            tmp_command_[i] = (command_next_.velocities[i] * ff_velocity_scale_[i]) +
                               pids_[i]->computeCommand(state_error_.positions[i], state_error_.velocities[i],
                                                        (uint64_t)period.nanoseconds());
           }
@@ -236,24 +258,25 @@ controller_interface::return_type ScaledJointTrajectoryController::update(const 
 
         // set values for next hardware write()
         if (has_position_command_interface_) {
-          assign_interface_from_point(joint_command_interface_[0], state_desired_.positions);
+          assign_interface_from_point(joint_command_interface_[0], command_next_.positions);
         }
         if (has_velocity_command_interface_) {
           if (use_closed_loop_pid_adapter_) {
             assign_interface_from_point(joint_command_interface_[1], tmp_command_);
           } else {
-            assign_interface_from_point(joint_command_interface_[1], state_desired_.velocities);
+            assign_interface_from_point(joint_command_interface_[1], command_next_.velocities);
           }
         }
         if (has_acceleration_command_interface_) {
-          assign_interface_from_point(joint_command_interface_[2], state_desired_.accelerations);
+          assign_interface_from_point(joint_command_interface_[2], command_next_.accelerations);
         }
         if (has_effort_command_interface_) {
           assign_interface_from_point(joint_command_interface_[3], tmp_command_);
         }
 
         // store the previous command. Used in open-loop control mode
-        last_commanded_state_ = state_desired_;
+        last_commanded_state_ = command_next_;
+        last_commanded_time_ = time;
       }
 
       if (active_goal) {
@@ -276,7 +299,7 @@ controller_interface::return_type ScaledJointTrajectoryController::update(const 
           // TODO(matthew-reynolds): Need a lock-free write here
           // See https://github.com/ros-controls/ros2_controllers/issues/168
           rt_active_goal_.writeFromNonRT(RealtimeGoalHandlePtr());
-          rt_has_pending_goal_.writeFromNonRT(false);
+          rt_has_pending_goal_ = false;
 
           RCLCPP_WARN(logger, "Aborted due to state tolerance violation");
 
@@ -292,7 +315,7 @@ controller_interface::return_type ScaledJointTrajectoryController::update(const 
             // TODO(matthew-reynolds): Need a lock-free write here
             // See https://github.com/ros-controls/ros2_controllers/issues/168
             rt_active_goal_.writeFromNonRT(RealtimeGoalHandlePtr());
-            rt_has_pending_goal_.writeFromNonRT(false);
+            rt_has_pending_goal_ = false;
 
             RCLCPP_INFO(logger, "Goal reached, success!");
 
@@ -309,21 +332,21 @@ controller_interface::return_type ScaledJointTrajectoryController::update(const 
             // TODO(matthew-reynolds): Need a lock-free write here
             // See https://github.com/ros-controls/ros2_controllers/issues/168
             rt_active_goal_.writeFromNonRT(RealtimeGoalHandlePtr());
-            rt_has_pending_goal_.writeFromNonRT(false);
+            rt_has_pending_goal_ = false;
 
-            RCLCPP_WARN(logger, error_string.c_str());
+            RCLCPP_WARN(logger, "%s", error_string.c_str());
 
             traj_msg_external_point_ptr_.reset();
             traj_msg_external_point_ptr_.initRT(set_hold_position());
           }
         }
-      } else if (tolerance_violated_while_moving && *(rt_has_pending_goal_.readFromRT()) == false) {
+      } else if (tolerance_violated_while_moving && !rt_has_pending_goal_) {
         // we need to ensure that there is no pending goal -> we get a race condition otherwise
         RCLCPP_ERROR(logger, "Holding position due to state tolerance violation");
 
         traj_msg_external_point_ptr_.reset();
         traj_msg_external_point_ptr_.initRT(set_hold_position());
-      } else if (!before_last_point && !within_goal_time && *(rt_has_pending_goal_.readFromRT()) == false) {
+      } else if (!before_last_point && !within_goal_time && !rt_has_pending_goal_) {
         RCLCPP_ERROR(logger, "Exceeded goal_time_tolerance: holding position...");
 
         traj_msg_external_point_ptr_.reset();
@@ -337,6 +360,30 @@ controller_interface::return_type ScaledJointTrajectoryController::update(const 
 
   publish_state(state_desired_, state_current_, state_error_);
   return controller_interface::return_type::OK;
+}
+
+void ScaledJointTrajectoryController::update_pids()
+{
+  for (size_t i = 0; i < dof_; ++i) {
+    const auto& gains = params_.gains.joints_map.at(params_.joints[i]);
+    if (pids_[i]) {
+      // update PIDs with gains from ROS parameters
+      pids_[i]->setGains(gains.p, gains.i, gains.d, gains.i_clamp, -gains.i_clamp);
+    } else {
+      // Init PIDs with gains from ROS parameters
+      pids_[i] = std::make_shared<control_toolbox::Pid>(gains.p, gains.i, gains.d, gains.i_clamp, -gains.i_clamp);
+    }
+    // Check deprecated style for "ff_velocity_scale" parameter definition.
+    if (gains.ff_velocity_scale == 0.0) {
+      RCLCPP_WARN(get_node()->get_logger(), "'ff_velocity_scale' parameters is not defined under 'gains.<joint_name>.' "
+                                            "structure. "
+                                            "Maybe you are using deprecated format 'ff_velocity_scale/<joint_name>'!");
+
+      ff_velocity_scale_[i] = auto_declare<double>("ff_velocity_scale/" + params_.joints[i], 0.0);
+    } else {
+      ff_velocity_scale_[i] = gains.ff_velocity_scale;
+    }
+  }
 }
 
 }  // namespace ur_controllers

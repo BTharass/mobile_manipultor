@@ -16,10 +16,6 @@ Welcome to ur_robot_driver's documentation!
    setup_tool_communication
    ROS_INTERFACE
    generated/index
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
+   robot_state_helper
+   controller_stopper
+   trajectory_until_node
