@@ -1,9 +1,0 @@
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ur/CMakeFiles/uninstall.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ur/CMakeFiles/ur_uninstall.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ur/CMakeFiles/test.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ur/CMakeFiles/edit_cache.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ur/CMakeFiles/rebuild_cache.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ur/CMakeFiles/list_install_components.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ur/CMakeFiles/install.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ur/CMakeFiles/install/local.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/ur/CMakeFiles/install/strip.dir

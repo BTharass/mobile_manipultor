@@ -1,9 +1,0 @@
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_gazebo/CMakeFiles/uninstall.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_gazebo/CMakeFiles/mir_gazebo_uninstall.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_gazebo/CMakeFiles/test.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_gazebo/CMakeFiles/edit_cache.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_gazebo/CMakeFiles/rebuild_cache.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_gazebo/CMakeFiles/list_install_components.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_gazebo/CMakeFiles/install.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_gazebo/CMakeFiles/install/local.dir
-/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_gazebo/CMakeFiles/install/strip.dir

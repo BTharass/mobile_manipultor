@@ -1,3 +1,0 @@
-[console_scripts]
-point_cloud_reader = point_cloud_functions.point_cloud_reader:main
-
