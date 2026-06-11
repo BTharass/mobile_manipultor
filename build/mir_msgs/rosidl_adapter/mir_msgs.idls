@@ -1,0 +1,3 @@
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_msgs/rosidl_adapter/mir_msgs:msg/BatteryCurrents.idl
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_msgs/rosidl_adapter/mir_msgs:msg/BMSData.idl
+/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_msgs/rosidl_adapter/mir_msgs:srv/ExecMission.idl

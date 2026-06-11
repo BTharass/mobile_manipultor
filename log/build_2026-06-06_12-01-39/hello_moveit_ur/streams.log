@@ -1,0 +1,77 @@
+[0.040s] Invoking command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/hello_moveit_ur': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/simple_moveit2_universal_robots_movement -DCMAKE_INSTALL_PREFIX=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur
+[0.481s] -- The C compiler identification is GNU 11.4.0
+[0.481s] -- The CXX compiler identification is GNU 11.4.0
+[0.481s] -- Detecting C compiler ABI info
+[0.481s] -- Detecting C compiler ABI info - done
+[0.481s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.482s] -- Detecting C compile features
+[0.482s] -- Detecting C compile features - done
+[0.482s] -- Detecting CXX compiler ABI info
+[0.482s] -- Detecting CXX compiler ABI info - done
+[0.482s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.482s] -- Detecting CXX compile features
+[0.482s] -- Detecting CXX compile features - done
+[0.482s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.485s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.622s] -- Found moveit_ros_planning_interface: 2.5.9 (/opt/ros/humble/share/moveit_ros_planning_interface/cmake)
+[0.813s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread 
+[0.882s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.894s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.912s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.937s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.973s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.288s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[1.363s] -- Found parameter_traits: 0.7.1 (/opt/ros/humble/share/parameter_traits/cmake)
+[1.412s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.417s] -- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+[1.448s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[1.461s] -- Found Threads: TRUE  
+[1.514s] -- Found rclcpp_lifecycle: 16.0.19 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+[1.558s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: filesystem 
+[1.664s] -- library: /usr/lib/x86_64-linux-gnu/libcurl.so
+[1.699s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.699s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.858s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono 
+[1.888s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options 
+[1.973s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread 
+[2.024s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.193s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.193s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/simple_moveit2_universal_robots_movement/include>
+[2.193s] -- Configured cppcheck exclude dirs and/or files: 
+[2.196s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.198s] -- Added test 'lint_cmake' to check CMake code style
+[2.200s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.202s] -- Added test 'uncrustify' to check C / C++ code style
+[2.202s] -- Configured uncrustify additional arguments: 
+[2.206s] -- Added test 'xmllint' to check XML markup files
+[2.208s] -- Configuring done
+[2.257s] -- Generating done
+[2.266s] -- Build files have been written to: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/hello_moveit_ur
+[2.284s] Invoked command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/hello_moveit_ur' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/simple_moveit2_universal_robots_movement -DCMAKE_INSTALL_PREFIX=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur
+[2.286s] Invoking command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/hello_moveit_ur': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --build /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/hello_moveit_ur -- -j16 -l16
+[2.352s] [ 50%] [32mBuilding CXX object CMakeFiles/hello_moveit_ur.dir/src/hello_moveit_ur.cpp.o[0m
+[14.638s] [100%] [32m[1mLinking CXX executable hello_moveit_ur[0m
+[15.126s] [100%] Built target hello_moveit_ur
+[15.135s] Invoked command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/hello_moveit_ur' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --build /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/hello_moveit_ur -- -j16 -l16
+[15.136s] Invoking command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/hello_moveit_ur': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --install /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/hello_moveit_ur
+[15.141s] -- Install configuration: ""
+[15.141s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/lib/hello_moveit_ur/hello_moveit_ur
+[15.143s] -- Set runtime path of "/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/lib/hello_moveit_ur/hello_moveit_ur" to ""
+[15.143s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/hello_moveit_ur//launch
+[15.143s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/hello_moveit_ur//launch/hello_moveit_ur_launch.py
+[15.143s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/ament_index/resource_index/package_run_dependencies/hello_moveit_ur
+[15.143s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/ament_index/resource_index/parent_prefix_path/hello_moveit_ur
+[15.143s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/hello_moveit_ur/environment/ament_prefix_path.sh
+[15.143s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/hello_moveit_ur/environment/ament_prefix_path.dsv
+[15.143s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/hello_moveit_ur/environment/path.sh
+[15.143s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/hello_moveit_ur/environment/path.dsv
+[15.143s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/hello_moveit_ur/local_setup.bash
+[15.143s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/hello_moveit_ur/local_setup.sh
+[15.143s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/hello_moveit_ur/local_setup.zsh
+[15.143s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/hello_moveit_ur/local_setup.dsv
+[15.144s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/hello_moveit_ur/package.dsv
+[15.144s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/ament_index/resource_index/packages/hello_moveit_ur
+[15.144s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/hello_moveit_ur/cmake/hello_moveit_urConfig.cmake
+[15.144s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/hello_moveit_ur/cmake/hello_moveit_urConfig-version.cmake
+[15.144s] -- Installing: /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/hello_moveit_ur/share/hello_moveit_ur/package.xml
+[15.145s] Invoked command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/hello_moveit_ur' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/ros2_aruco:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/point_cloud_functions:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_driver:/home/t_b/pp_ros2_ws/install/rosbot_gazebo:/home/t_b/pp_ros2_ws/install/rosbot_controller:/home/t_b/pp_ros2_ws/install/rosbot_utils:/home/t_b/swaraj/piper_ros/install/piper:/home/t_b/leader_follower/install/apf:/home/t_b/amogh_app/amogh_ws/install/pursuers:/home/t_b/stonefish_ros/install/codes:/home/t_b/stonefish_ros/install/software_stack:/opt/ros/humble /usr/bin/cmake --install /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/hello_moveit_ur

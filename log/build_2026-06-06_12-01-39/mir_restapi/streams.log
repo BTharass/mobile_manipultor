@@ -1,0 +1,46 @@
+[0.883s] Invoking command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/mir_robot/mir_restapi': PYTHONPATH=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/mir_restapi build --build-base /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/build install --record /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/install.log --single-version-externally-managed install_data
+[1.091s] running egg_info
+[1.092s] creating ../../build/mir_restapi/mir_restapi.egg-info
+[1.092s] writing ../../build/mir_restapi/mir_restapi.egg-info/PKG-INFO
+[1.092s] writing dependency_links to ../../build/mir_restapi/mir_restapi.egg-info/dependency_links.txt
+[1.092s] writing entry points to ../../build/mir_restapi/mir_restapi.egg-info/entry_points.txt
+[1.092s] writing requirements to ../../build/mir_restapi/mir_restapi.egg-info/requires.txt
+[1.092s] writing top-level names to ../../build/mir_restapi/mir_restapi.egg-info/top_level.txt
+[1.093s] writing manifest file '../../build/mir_restapi/mir_restapi.egg-info/SOURCES.txt'
+[1.094s] reading manifest file '../../build/mir_restapi/mir_restapi.egg-info/SOURCES.txt'
+[1.094s] adding license file 'LICENSE'
+[1.095s] writing manifest file '../../build/mir_restapi/mir_restapi.egg-info/SOURCES.txt'
+[1.095s] running build
+[1.095s] running build_py
+[1.095s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/build
+[1.095s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/build/lib
+[1.095s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/build/lib/mir_restapi
+[1.095s] copying mir_restapi/mir_restapi_lib.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/build/lib/mir_restapi
+[1.096s] copying mir_restapi/__init__.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/build/lib/mir_restapi
+[1.096s] copying mir_restapi/mir_restapi_sync_time.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/build/lib/mir_restapi
+[1.096s] copying mir_restapi/mir_restapi_server.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/build/lib/mir_restapi
+[1.096s] running install
+[1.096s] running install_lib
+[1.097s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/lib/python3.10/site-packages/mir_restapi
+[1.097s] copying /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/build/lib/mir_restapi/mir_restapi_lib.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/lib/python3.10/site-packages/mir_restapi
+[1.097s] copying /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/build/lib/mir_restapi/__init__.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/lib/python3.10/site-packages/mir_restapi
+[1.097s] copying /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/build/lib/mir_restapi/mir_restapi_sync_time.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/lib/python3.10/site-packages/mir_restapi
+[1.097s] copying /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/build/lib/mir_restapi/mir_restapi_server.py -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/lib/python3.10/site-packages/mir_restapi
+[1.098s] byte-compiling /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/lib/python3.10/site-packages/mir_restapi/mir_restapi_lib.py to mir_restapi_lib.cpython-310.pyc
+[1.101s] byte-compiling /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/lib/python3.10/site-packages/mir_restapi/__init__.py to __init__.cpython-310.pyc
+[1.101s] byte-compiling /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/lib/python3.10/site-packages/mir_restapi/mir_restapi_sync_time.py to mir_restapi_sync_time.cpython-310.pyc
+[1.101s] byte-compiling /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/lib/python3.10/site-packages/mir_restapi/mir_restapi_server.py to mir_restapi_server.cpython-310.pyc
+[1.103s] running install_data
+[1.103s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/share/ament_index
+[1.103s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/share/ament_index/resource_index
+[1.103s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/share/ament_index/resource_index/packages
+[1.103s] copying resource/mir_restapi -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/share/ament_index/resource_index/packages
+[1.104s] copying package.xml -> /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/share/mir_restapi
+[1.104s] creating /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/share/mir_restapi/launch
+[1.104s] running install_egg_info
+[1.106s] Copying ../../build/mir_restapi/mir_restapi.egg-info to /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/lib/python3.10/site-packages/mir_restapi-0.0.0-py3.10.egg-info
+[1.106s] running install_scripts
+[1.129s] Installing mir_restapi_server script to /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/lib/mir_restapi
+[1.129s] Installing mir_restapi_sync_time script to /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/lib/mir_restapi
+[1.129s] writing list of installed files to '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/install.log'
+[1.155s] Invoked command in '/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/mir_robot/mir_restapi' returned '0': PYTHONPATH=/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/install/mir_restapi/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/mir_restapi build --build-base /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/build install --record /home/t_b/ros2_ws/src/UR-MiR-mobile-manipulator/build/mir_restapi/install.log --single-version-externally-managed install_data
