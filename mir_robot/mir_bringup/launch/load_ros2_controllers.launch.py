@@ -40,6 +40,12 @@ def generate_launch_description():
         output='screen'
     )
 
+    start_gripper_controller_cmd = ExecuteProcess(
+        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
+             'gripper_controller'],
+        output='screen'
+    )
+
     # Start joint state broadcaster
     start_joint_state_broadcaster_cmd = ExecuteProcess(
         cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
@@ -68,6 +74,11 @@ def generate_launch_description():
         event_handler=OnProcessExit(
             target_action=start_joint_trajectory_controller_cmd,
             on_exit=[start_diff_drive_controller_cmd]))
+    
+    load_gripper_controller_cmd = RegisterEventHandler(
+        event_handler=OnProcessExit(
+            target_action=start_diff_drive_controller_cmd,
+            on_exit=[start_gripper_controller_cmd]))
 
     # Create and populate the launch description
     ld = LaunchDescription()
@@ -76,5 +87,6 @@ def generate_launch_description():
     ld.add_action(delayed_start)
     ld.add_action(load_join_trajectory_controller_cmd)
     ld.add_action(load_diff_drive_controller_cmd)
+    ld.add_action(load_gripper_controller_cmd)
 
     return ld

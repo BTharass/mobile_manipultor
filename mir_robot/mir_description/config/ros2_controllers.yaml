@@ -11,6 +11,9 @@ controller_manager:
 
     joint_trajectory_controller:
       type: joint_trajectory_controller/JointTrajectoryController
+      
+    gripper_controller:
+      type: parallel_gripper_action_controller/GripperActionController
 
 
 
@@ -85,3 +88,12 @@ joint_trajectory_controller:
       ur_wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
       ur_wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
       ur_wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
+
+
+# ADD THIS BLOCK at the bottom:
+gripper_controller:
+  ros__parameters:
+    joint: robotiq_85_left_knuckle_joint
+    allow_stalling: true
+    stall_timeout: 0.05
+    goal_tolerance: 0.02

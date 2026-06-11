@@ -35,6 +35,9 @@
   <xacro:include filename="$(find mir_description)/control/mir_ros2_control.urdf.xacro"/>
   <xacro:mir_ros2_control/>
 
+  <xacro:include filename="$(find mir_description)/control/gripper_ros2_control.xacro"/>
+  <xacro:robotiq_gripper_ros2_control/>
+
 
 
   <!-- i am stupid for changing the above to this fromat cuz either the manipultor ius going to have ...... -->

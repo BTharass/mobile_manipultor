@@ -334,7 +334,7 @@
       <origin xyz="0.02 0 -0.061" rpy="${pi} 0 0"/>
     </xacro:sensor_d435i> -->
 
-    <!-- <link name="robotiq_coupler">
+    <link name="robotiq_coupler">
       <visual>
         <geometry>
           <mesh filename="package://robotiq_description/meshes/robotiq_85_coupler.stl" />
@@ -367,7 +367,7 @@
 
     <xacro:robotiq_85_gripper prefix="" parent="robotiq_coupler" >
       <origin xyz="0 0 0.004" rpy="0 ${-pi/2} ${pi}"/>
-    </xacro:robotiq_85_gripper>  -->
+    </xacro:robotiq_85_gripper> 
 
     <!-- Gazebo FT sensor plugin -->
     <!-- <gazebo reference="wrist_3_joint">
